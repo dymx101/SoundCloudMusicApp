@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/layout_root"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/row_height_small"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin">
+
+        <TextView
+            android:id="@+id/tv_genre_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/small_margin"
+            android:layout_marginRight="@dimen/small_margin"
+            android:layout_toLeftOf="@+id/img_indicator"
+            android:singleLine="true"
+            android:text="ABCBCBC"
+            android:textColor="@color/main_color_text"
+            android:textSize="@dimen/text_size_body"/>
+
+        <com.musichero.xmusic.view.MaterialIconView
+            android:id="@+id/img_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="@string/icon_chevron_right"
+            android:textColor="@color/main_color_hint_text"
+            android:textSize="@dimen/size_img_small"
+        />
+
+    </RelativeLayout>
+
+</RelativeLayout>

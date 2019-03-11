@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/layout_music"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_img_big"
+            android:background="@color/bottom_player_bg_color">
+            <ImageView
+                android:id="@+id/img_song"
+                android:layout_width="@dimen/size_img_big"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_rect_music_default"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/small_margin"
+                android:layout_toLeftOf="@+id/btn_prev"
+                android:layout_toRightOf="@+id/img_song"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_song"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
+                    android:text="@string/app_name"
+                    android:textColor="@color/main_color_text"
+                    android:textSize="@dimen/text_size_body"/>
+
+                <TextView
+                    android:id="@+id/tv_singer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
+                    android:text="Dan Truong"
+                    android:textColor="@color/main_color_secondary_text"
+                    android:textSize="@dimen/text_size_body"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/btn_next"
+                android:layout_width="@dimen/size_img_medium"
+                android:layout_height="@dimen/size_img_medium"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dialog_margin"
+                android:src="@drawable/ic_skip_next_white_36dp"
+            />
+
+
+            <ImageView
+                android:id="@+id/btn_play"
+                android:layout_width="@dimen/size_img_medium"
+                android:layout_height="@dimen/size_img_medium"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/small_margin"
+                android:layout_toLeftOf="@+id/btn_next"
+                android:src="@drawable/ic_play_arrow_white_36dp"
+            />
+
+            <ImageView
+                android:id="@+id/btn_prev"
+                android:layout_width="@dimen/size_img_medium"
+                android:layout_height="@dimen/size_img_medium"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/small_margin"
+                android:layout_toLeftOf="@+id/btn_play"
+                android:src="@drawable/ic_skip_previous_white_36dp"
+            />
+
+            <com.musichero.xmusic.view.CircularProgressBar
+                android:id="@+id/img_status_loading"
+                android:layout_width="@dimen/size_img_small"
+                android:layout_height="@dimen/size_img_small"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:visibility="gone"
+                app:cpb_color="@color/progressbar_color"
+                app:cpb_stroke_width="@dimen/stroke_process"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/play_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+        <fragment
+            android:id="@+id/fragment_listen_music"
+            android:name="com.musichero.xmusic.fragment.FragmentYPYPlayerListenMusic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </fragment>
+    </FrameLayout>
+
+</RelativeLayout>

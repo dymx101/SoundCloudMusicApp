@@ -1,0 +1,98 @@
+[
+  {
+    "id": "1",
+    "name": "EDM",
+    "keyword": "danceedm",
+    "img":"file:///android_asset/genre_images/edm.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Trap",
+    "keyword": "trap",
+    "img":"file:///android_asset/genre_images/trap.jpg"
+  },
+  {
+    "id": "3",
+    "name": "Ambient",
+    "keyword": "ambient",
+    "img":"file:///android_asset/genre_images/ambient.jpg"
+  },
+  {
+    "id": "4",
+    "name": "House",
+    "keyword": "house",
+    "img":"file:///android_asset/genre_images/house.jpg"
+  },
+  {
+    "id": "5",
+    "name": "Dancehall",
+    "keyword": "dancehall",
+    "img":"file:///android_asset/genre_images/dancehall.jpg"
+  },
+  {
+    "id": "6",
+    "name": "Deep House",
+    "keyword": "deephouse",
+    "img":"file:///android_asset/genre_images/deephouse.jpg"
+  },
+  {
+    "id": "7",
+    "name": "Disco",
+    "keyword": "disco",
+    "img":"file:///android_asset/genre_images/disco.jpg"
+  },
+  {
+    "id": "8",
+    "name": "Dubstep",
+    "keyword": "dubstep",
+    "img":"file:///android_asset/genre_images/dubstep.jpg"
+  },
+  {
+    "id": "9",
+    "name": "Electronic",
+    "keyword": "electronic",
+    "img":"file:///android_asset/genre_images/electro.jpg"
+  },
+  {
+    "id": "10",
+    "name": "Rap Hip hop",
+    "keyword": "hiphoprap",
+    "img":"file:///android_asset/genre_images/hiphop.jpg"
+  },
+  {
+    "id": "11",
+    "name": "Jazz",
+    "keyword": "jazzblues",
+    "img":"file:///android_asset/genre_images/jazz.jpg"
+  },
+  {
+    "id": "12",
+    "name": "Latin",
+    "keyword": "latin",
+    "img":"file:///android_asset/genre_images/latin.jpg"
+  },
+  {
+    "id": "13",
+    "name": "Metal",
+    "keyword": "metal",
+    "img":"file:///android_asset/genre_images/metal.jpg"
+  },
+  {
+    "id": "14",
+    "name": "Pop",
+    "keyword": "pop",
+    "img":"file:///android_asset/genre_images/pop.jpg"
+  },
+  {
+    "id": "15",
+    "name": "R&B",
+    "keyword": "rbsoul",
+    "img":"file:///android_asset/genre_images/rbsoul.jpg"
+  },
+  {
+    "id": "16",
+    "name": "Rock",
+    "keyword": "rock",
+    "img":"file:///android_asset/genre_images/rock.jpg"
+  }
+]

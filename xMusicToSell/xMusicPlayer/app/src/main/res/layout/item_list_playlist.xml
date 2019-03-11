@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/layout_ripple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mrl_rippleAlpha="0.2"
+        app:mrl_rippleColor="@color/ripple_effect_color"
+        app:mrl_rippleHover="true"
+        app:mrl_rippleOverlay="true">
+
+        <RelativeLayout
+            android:id="@+id/layout_root"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/row_height_track">
+
+            <ImageView
+                android:id="@+id/img_playlist"
+                android:layout_width="@dimen/size_img_big"
+                android:layout_height="@dimen/size_img_big"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dialog_margin"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_rect_music_default"
+            />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/small_margin"
+                android:layout_marginRight="@dimen/small_margin"
+                android:layout_toLeftOf="@+id/img_menu"
+                android:layout_toRightOf="@+id/img_playlist"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_playlist_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="ABCBCBC"
+                    android:textStyle="bold"
+                    android:textColor="@color/main_color_text"
+                    android:textSize="@dimen/text_size_body"
+                />
+
+                <TextView
+                    android:id="@+id/tv_number_music"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@string/format_number_musics"
+                    android:textColor="@color/main_color_secondary_text"
+                    android:textSize="@dimen/text_size_body"/>
+            </LinearLayout>
+
+            <com.musichero.xmusic.view.MaterialIconView
+                android:id="@+id/img_menu"
+                android:layout_width="@dimen/size_img_medium"
+                android:layout_height="@dimen/size_img_medium"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/small_margin"
+                android:gravity="center"
+                android:padding="0dp"
+                android:text="@string/icon_menu"
+                android:textColor="@color/main_color_hint_text"
+                android:textSize="@dimen/size_img_small"
+            />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="@dimen/dialog_margin"
+                android:layout_marginRight="@dimen/dialog_margin"
+                android:background="@color/main_color_divider"></View>
+        </RelativeLayout>
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+
+</RelativeLayout>

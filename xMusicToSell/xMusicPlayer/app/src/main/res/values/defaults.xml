@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="cpb_default_color">#fda300</color>
+
+    <dimen name="cpb_default_stroke_width">4dp</dimen>
+
+    <integer name="cpb_default_min_sweep_angle">20</integer>
+    <integer name="cpb_default_max_sweep_angle">300</integer>
+
+    <item name="cpb_default_sweep_speed" format="float" type="string">1</item>
+    <item name="cpb_default_rotation_speed" format="float" type="string">1</item>
+
+    <integer name="default_blur_radius">15</integer>
+    <integer name="default_downsample_factor">8</integer>
+    <color name="default_overlay_color">#AAFFFFFF</color>
+
+    <!-- show/hide animation duration -->
+    <integer name="bbn_hide_animation_duration">250</integer>
+
+    <!-- item animation durarion (active/inactive) -->
+    <integer name="bbn_item_animation_duration">100</integer>
+
+    <!-- background color change animation duration -->
+    <integer name="bbn_background_animation_duration">350</integer>
+
+    <item name="bbn_backgroundOverlay_animator" type="id" />
+    <!-- id for the items layout container -->
+    <item name="bbn_layoutManager" type="id" />
+
+    <!-- default BottomNavigation height -->
+    <dimen name="bbn_bottom_navigation_height">56dp</dimen>
+
+    <!-- default BottomNavigation width (for tablets) -->
+    <dimen name="bbn_bottom_navigation_width">72dp</dimen>
+
+    <!-- default BottomNavigation elevation -->
+    <dimen name="bbn_elevation">8dp</dimen>
+    <dimen name="bbn_elevation_tablet">0dp</dimen>
+
+    <!-- top shadow size -->
+    <dimen name="bbn_top_shadow_height">6dp</dimen>
+
+</resources>

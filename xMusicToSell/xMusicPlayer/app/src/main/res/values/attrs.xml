@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CircularProgressBar">
+        <attr name="cpbStyle" format="reference" />
+        <attr name="cpb_color" format="color" />
+        <attr name="cpb_colors" format="reference" />
+        <attr name="cpb_stroke_width" format="dimension" />
+        <attr name="cpb_min_sweep_angle" format="integer" />
+        <attr name="cpb_max_sweep_angle" format="integer" />
+        <attr name="cpb_sweep_speed" format="float" />
+        <attr name="cpb_rotation_speed" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="DeviderColor">
+        <attr name="deviderColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="MaterialDesign">
+        <attr name="showNumberIndicator" format="boolean" />
+        <!-- in progress view indicate max value of progress -->
+        <attr name="max" format="integer" />
+        <!-- in progress view indicate min value of progress -->
+        <attr name="min" format="integer" />
+        <!-- in progress view indicate value of progress -->
+        <attr name="value" format="integer" />
+        <attr name="check" format="boolean" />
+    </declare-styleable>
+
+    <!-- style for the scroll behavior -->
+    <declare-styleable name="BottomNavigationBehavior">
+        <attr name="bbn_animationDuration" format="integer" />
+        <attr name="bbn_scrollEnabled" format="boolean" />
+    </declare-styleable>
+
+    <!-- styles for the 'BottomNavigation' View -->
+    <declare-styleable name="BottomNavigation">
+        <attr name="bbn_entries" format="reference" />
+        <attr name="bbn_badgeProvider" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="VerticalSeekBar">
+        <attr name="seekBarRotation">
+            <!-- Clock wise - 90 deg; top = min, bottom = max -->
+            <enum name="CW90" value="90" />
+            <!-- Clock wise - 270 deg; bottom = min, top = max -->
+            <enum name="CW270" value="270" />
+        </attr>
+    </declare-styleable>
+
+</resources>

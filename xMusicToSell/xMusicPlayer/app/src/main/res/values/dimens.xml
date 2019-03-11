@@ -1,0 +1,77 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="widget_margin_top">4dp</dimen>
+    <dimen name="my_button_width">32dp</dimen>
+
+    <dimen name="widget_margin">8dp</dimen>
+
+    <dimen name="padding_top_dialog">22dp</dimen>
+    <dimen name="row_height_normal">64dp</dimen>
+    <dimen name="row_height_small">50dp</dimen>
+    <dimen name="row_height_track">80dp</dimen>
+    <dimen name="row_height_medium">88dp</dimen>
+    <dimen name="row_height_tab">54dp</dimen>
+
+    <dimen name="row_height_tiny">40dp</dimen>
+    <dimen name="row_height_button">44dp</dimen>
+    <dimen name="row_height_sale">55dp</dimen>
+    <dimen name="row_height_search_small">36dp</dimen>
+    <dimen name="row_height_explore_playlist">120dp</dimen>
+    <dimen name="height_edit_text">48dp</dimen>
+
+    <dimen name="default_line_indicator_line_width">12dp</dimen>
+    <dimen name="default_line_indicator_gap_width">4dp</dimen>
+    <dimen name="default_line_indicator_stroke_width">2dp</dimen>
+    <color name="default_line_indicator_selected_color">#FF33B5E5</color>
+    <color name="default_line_indicator_unselected_color">#FFBBBBBB</color>
+    <bool name="default_line_indicator_centered">true</bool>
+
+    <dimen name="dialog_margin">10sp</dimen>
+    <dimen name="size_img_medium">36dp</dimen>
+    <dimen name="size_img_small">24dp</dimen>
+    <dimen name="size_img_tiny">18dp</dimen>
+    <dimen name="size_img_large">48dp</dimen>
+    <dimen name="size_img_big">60dp</dimen>
+
+    <dimen name="height_native_express_ads">100dp</dimen>
+    <dimen name="height_ads">50dp</dimen>
+    <dimen name="height_seekbar_listen_music">3sp</dimen>
+    <dimen name="margin_control_music">-2sp</dimen>
+    <dimen name="tab_indicator_height">4dp</dimen>
+
+    <dimen name="size_progress_download">50dp</dimen>
+    <dimen name="height_img_track">180dp</dimen>
+    <dimen name="height_grid_track">150dp</dimen>
+    <dimen name="height_layout_img_track">200dp</dimen>
+
+    <dimen name="small_margin">5sp</dimen>
+    <dimen name="tiny_margin">3sp</dimen>
+
+    <dimen name="divider">1dp</dimen>
+    <dimen name="text_size_small">12dp</dimen>
+
+    <dimen name="height_process_bar">30sp</dimen>
+    <dimen name="stroke_process">3sp</dimen>
+    <dimen name="height_pager">10sp</dimen>
+    <dimen name="app_bar_height">200dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="card_elevation">4dp</dimen>
+
+    <dimen name="float_action_button_big_size">56dp</dimen>
+    <dimen name="float_action_button_small_size">40dp</dimen>
+    <dimen name="float_action_button_elevation">6dp</dimen>
+    <dimen name="float_action_button_translationz">12dp</dimen>
+
+    <dimen name="size_equalizer">200dp</dimen>
+    <dimen name="size_bass_virtualizer">160dp</dimen>
+    <dimen name="size_sleep_timer">220dp</dimen>
+    <dimen name="text_size_tab">11dp</dimen>
+    <dimen name="height_item_video">120dp</dimen>
+
+
+</resources>

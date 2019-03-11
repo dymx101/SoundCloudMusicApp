@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+    >
+        <RelativeLayout
+            android:id="@+id/btn_add_playlist"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/row_height_track"
+            >
+
+            <com.musichero.xmusic.view.MaterialIconView
+                android:id="@+id/img_add"
+                android:layout_width="@dimen/size_img_big"
+                android:layout_height="@dimen/size_img_big"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dialog_margin"
+                android:background="@color/main_color_divider"
+                android:gravity="center"
+                android:padding="0dp"
+                android:text="@string/icon_add"
+                android:textColor="@color/main_color_secondary_text"
+                android:textSize="@dimen/size_img_medium"/>
+
+            <TextView
+                android:id="@+id/tv_add_new_playlist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/small_margin"
+                android:layout_toRightOf="@+id/img_add"
+                android:singleLine="true"
+                android:text="@string/title_add_playlist"
+                android:textColor="@color/main_color_text"
+                android:textSize="@dimen/text_size_body"
+            />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="@dimen/dialog_margin"
+                android:layout_marginRight="@dimen/dialog_margin"
+                android:background="@color/main_color_divider"></View>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

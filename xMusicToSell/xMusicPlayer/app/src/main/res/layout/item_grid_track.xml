@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/layout_ripple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mrl_rippleAlpha="0.2"
+        app:mrl_rippleColor="@color/ripple_effect_color"
+        app:mrl_rippleHover="true"
+        app:mrl_rippleOverlay="true">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/small_margin"
+            android:layout_marginRight="@dimen/small_margin"
+            app:cardBackgroundColor="@color/card_view_bg_color"
+            app:cardElevation="@dimen/card_elevation"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true">
+            <LinearLayout
+                android:id="@+id/layout_root"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/img_songs"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_item_video"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/default_image"
+                />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/small_margin">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/img_menu"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_song"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="VEXKHOIS"
+                            android:textStyle="bold"
+                            android:textColor="@color/main_color_text"
+                            android:textSize="@dimen/text_size_body"
+                        />
+                        <TextView
+                            android:id="@+id/tv_singer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="Dan Trung"
+                            android:textColor="@color/main_color_secondary_text"
+                            android:textSize="@dimen/text_size_body"/>
+                    </LinearLayout>
+
+                    <com.musichero.xmusic.view.MaterialIconView
+                        android:id="@+id/img_menu"
+                        android:layout_width="@dimen/size_img_small"
+                        android:layout_height="@dimen/size_img_small"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:padding="0dp"
+                        android:text="@string/icon_menu"
+                        android:textColor="@color/main_color_secondary_text"
+                        android:textSize="@dimen/size_img_small"
+                    />
+                </RelativeLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+</RelativeLayout>

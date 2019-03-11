@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:paddingLeft="@dimen/dialog_margin"
+              android:paddingRight="@dimen/dialog_margin">
+
+    <TextView
+        android:id="@+id/tv_max_db"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:singleLine="true"
+        android:textColor="@color/main_color_text"
+        android:textSize="@dimen/text_size_body"/>
+
+    <com.musichero.xmusic.view.VerticalSeekBarWrapper
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size_equalizer"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dialog_margin">
+
+        <com.musichero.xmusic.view.VerticalSeekBar
+            android:id="@+id/mySeekBar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:splitTrack="false"
+            app:seekBarRotation="CW270"/>
+    </com.musichero.xmusic.view.VerticalSeekBarWrapper>
+    <TextView
+        android:id="@+id/tv_min_db"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:singleLine="true"
+        android:textColor="@color/main_color_text"
+        android:textSize="@dimen/text_size_body"/>
+</LinearLayout>

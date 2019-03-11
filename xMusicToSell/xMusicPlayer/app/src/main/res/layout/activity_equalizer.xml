@@ -1,0 +1,178 @@
+<RelativeLayout
+    android:id="@+id/layout_bg"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent"
+    >
+
+    <include
+        android:id="@+id/my_toolbar"
+        layout="@layout/item_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+    />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/my_toolbar"
+        android:background="@color/colorBackground"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/small_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/small_margin"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/layout_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:splitMotionEvents="false"
+            >
+
+                <TextView
+                    android:id="@+id/tv_equalizer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:singleLine="true"
+                    android:text="@string/title_equalizer"
+                    android:textStyle="bold"
+                    android:textColor="@color/main_color_text"
+                    android:textSize="@dimen/text_size_subhead"/>
+
+                <Spinner
+                    android:id="@+id/list_preset"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/row_height_small"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/small_margin"
+                    android:layout_marginRight="@dimen/small_margin"
+                    android:layout_toLeftOf="@+id/switch1"
+                    android:layout_toRightOf="@+id/tv_equalizer"/>
+
+                <com.musichero.xmusic.view.SwitchView
+                    android:id="@+id/switch1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="?attr/colorPrimary"
+                    app:check="true"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_bands"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:splitMotionEvents="false">
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_bass_vir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_bass_virtualizer">
+                        <com.triggertrap.seekarc.SeekArc
+                            android:id="@+id/seekBass"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/size_bass_virtualizer"
+                            android:layout_gravity="center_horizontal"
+                            android:padding="@dimen/size_img_medium"
+                            app:arcWidth="3dp"
+                            app:rotation="180"
+                            app:seekarc_max="100"
+                            app:startAngle="30"
+                            app:sweepAngle="300"
+                        />
+                        <TextView
+                            android:id="@+id/tv_info_bass"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/main_color_text"
+                            android:textSize="@dimen/text_size_headline"/>
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tv_bass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:singleLine="true"
+                        android:textStyle="bold"
+                        android:text="@string/title_bass"
+                        android:textColor="@color/main_color_text"
+                        android:textSize="@dimen/text_size_subhead"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_bass_virtualizer">
+                        <com.triggertrap.seekarc.SeekArc
+                            android:id="@+id/seekVir"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:padding="@dimen/size_img_medium"
+                            app:arcWidth="3dp"
+                            app:rotation="180"
+                            app:seekarc_max="100"
+                            app:startAngle="30"
+                            app:sweepAngle="300"
+                        />
+                        <TextView
+                            android:id="@+id/tv_info_virtualizer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/main_color_text"
+                            android:textSize="@dimen/text_size_headline"/>
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tv_virtualizer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:singleLine="true"
+                        android:textStyle="bold"
+                        android:text="@string/title_virtualizer"
+                        android:textColor="@color/main_color_text"
+                        android:textSize="@dimen/text_size_subhead"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

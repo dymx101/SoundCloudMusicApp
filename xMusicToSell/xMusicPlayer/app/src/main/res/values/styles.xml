@@ -1,0 +1,79 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppThemeLight" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="cpbStyle">@style/CircularProgressBar</item>
+
+        <item name="actionBarStyle">@style/MyActionBar</item>
+        <item name="homeAsUpIndicator">@drawable/ic_arrow_back_white_24dp</item>
+        <item name="drawerArrowStyle">@style/MyActionBarDrawerArrowStyle</item>
+        <item name="android:textColor">@color/main_color_text</item>
+    </style>
+    <!-- Base application theme. -->
+    <style name="AppThemeDark" parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="cpbStyle">@style/CircularProgressBar</item>
+    </style>
+
+    <style name="AppThemeFull" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="cpbStyle">@style/CircularProgressBar</item>
+    </style>
+
+    <style name="CircularProgressBar" parent="android:Widget.Holo.ProgressBar">
+        <item name="cpb_color">@color/white</item>
+        <item name="cpb_stroke_width">4dp</item>
+        <item name="cpb_min_sweep_angle">20</item>
+        <item name="cpb_max_sweep_angle">300</item>
+        <item name="cpb_sweep_speed">1</item>
+        <item name="cpb_rotation_speed">1</item>
+    </style>
+
+    <style name="MineCustomTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/text_size_tab</item>
+        <item name="textAllCaps">true</item>
+    </style>
+    <style name="AppThemeFull.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppThemeFull.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <!-- ActionBar styles -->
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.ActionBar">
+        <item name="background">@color/colorPrimary</item>
+        <item name="titleTextStyle">@style/MyActionBarTitleText</item>
+    </style>
+
+    <!-- ActionBar title text -->
+    <style name="MyActionBarTitleText" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="MyActionBarDrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/white</item>
+    </style>
+
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+
+
+
+</resources>

@@ -1,0 +1,15 @@
+<resources>
+
+    <dimen name="nav_width">304dp</dimen>
+    <dimen name="text_size_body">14sp</dimen>
+    <dimen name="text_size_subhead">16sp</dimen>
+    <dimen name="text_size_title">20sp</dimen>
+    <dimen name="text_size_headline">24sp</dimen>
+    <dimen name="text_size_home">11dp</dimen>
+    <dimen name="height_seekbar_listen_music">7sp</dimen>
+    <dimen name="margin_control_music">-5sp</dimen>
+
+    <dimen name="height_img_track">250dp</dimen>
+    <dimen name="height_layout_img_track">270dp</dimen>
+
+</resources>

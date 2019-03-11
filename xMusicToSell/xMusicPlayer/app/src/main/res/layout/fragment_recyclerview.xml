@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_datas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+    >
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/tv_no_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:gravity="center_horizontal"
+        android:singleLine="true"
+        android:text="@string/title_no_songs"
+        android:textColor="@color/main_color_text"
+        android:textSize="@dimen/text_size_body"
+        android:visibility="gone"/>
+
+    <com.musichero.xmusic.view.CircularProgressBar
+        android:id="@+id/progressBar1"
+        android:layout_width="@dimen/height_process_bar"
+        android:layout_height="@dimen/height_process_bar"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:cpb_color="@color/progressbar_color"
+        app:cpb_stroke_width="@dimen/stroke_process"/>
+
+
+</RelativeLayout>
