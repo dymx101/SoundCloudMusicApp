@@ -144,10 +144,10 @@
     <string name="format_minute">%1$s minute</string>
     <string name="title_now_playing">Now Playing</string>
 
-    <string name="title_tab_top_charts">Top Hit</string>
-    <string name="title_tab_discover">Discover</string>
-    <string name="title_tab_my_music">My Music</string>
-    <string name="title_tab_my_playlist">Playlist</string>
+    <string name="title_tab_top_charts">Trending</string>
+    <string name="title_tab_discover">Genre</string>
+    <string name="title_tab_my_music">My Songs</string>
+    <string name="title_tab_my_playlist">My Playlist</string>
 
     <string name="info_write_setting_permission">We need to have the write_setting permission to set ringtone or notification.Do you want to supply it now?</string>
     <string name="info_set_ringtone_successfully">Set as a ringtone successfully</string>
