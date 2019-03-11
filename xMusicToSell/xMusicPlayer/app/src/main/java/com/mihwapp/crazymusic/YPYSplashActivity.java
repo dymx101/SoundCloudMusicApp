@@ -117,12 +117,13 @@ public class YPYSplashActivity extends YPYFragmentActivity {
     }
 
     public void goToMainActivity() {
-        showInterstitial(() -> {
-            mProgressBar.setVisibility(View.INVISIBLE);
-            Intent mIntent = new Intent(YPYSplashActivity.this, YPYMainActivity.class);
-            startActivity(mIntent);
-            finish();
-        });
+
+        mProgressBar.setVisibility(View.INVISIBLE);
+        Intent mIntent = new Intent(YPYSplashActivity.this, YPYMainActivity.class);
+        startActivity(mIntent);
+        finish();
+
+        showInterstitial(() -> {});
        }
 
 
