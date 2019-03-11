@@ -19,10 +19,10 @@ public interface IXMusicConstants {
 	public static final int NUMBER_LAUNCH_TIMES=3;//it is the number launch times to show dialog rate.default is 3
 	public static final int REMIND_TIME_INTERVAL=1;//it is the number repeat days to show dialog rate.default is 1
 
-	public static final String SOUND_CLOUD_CLIENT_ID = "SOUND_CLOUD_CLIENT_ID";
-	public static final String ADMOB_BANNER_ID = "ADMOB_BANNER_ID";
-	public static final String ADMOB_INTERSTITIAL_ID = "ADMOB_INTERSTITIAL_ID";
-	public static final String ADMOB_APP_ID = "ADMOB_APP_ID";
+	public static final String SOUND_CLOUD_CLIENT_ID = "da4d86aabbcf228c9d69d96729241962";
+	public static final String ADMOB_BANNER_ID = "ca-app-pub-7635376757557763/7943615342";
+	public static final String ADMOB_INTERSTITIAL_ID = "ca-app-pub-7635376757557763/9065125320";
+	public static final String ADMOB_APP_ID = "ca-app-pub-7635376757557763~5982778361";
 	public static final String DIR_CACHE = "xmusic_app";
 
 	public static final boolean SHOW_SOUND_CLOUD_TAB = true; //enable sound cloud tab
