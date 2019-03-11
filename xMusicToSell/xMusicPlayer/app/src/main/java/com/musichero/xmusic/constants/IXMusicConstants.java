@@ -19,7 +19,7 @@ public interface IXMusicConstants {
 	public static final int NUMBER_LAUNCH_TIMES=3;//it is the number launch times to show dialog rate.default is 3
 	public static final int REMIND_TIME_INTERVAL=1;//it is the number repeat days to show dialog rate.default is 1
 
-	public static final String SOUND_CLOUD_CLIENT_ID = "da4d86aabbcf228c9d69d96729241962";
+	public static final String SOUND_CLOUD_CLIENT_ID = "73a3db34973aee46de488c0b902b5cc3";
 	public static final String ADMOB_BANNER_ID = "ca-app-pub-7635376757557763/7943615342";
 	public static final String ADMOB_INTERSTITIAL_ID = "ca-app-pub-7635376757557763/9065125320";
 	public static final String ADMOB_APP_ID = "ca-app-pub-7635376757557763~5982778361";
