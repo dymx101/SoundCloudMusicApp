@@ -30,7 +30,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/small_margin">
 
-                    <com.musichero.xmusic.view.SliderView
+                    <com.mihwapp.crazymusic.view.SliderView
                         android:id="@+id/seekBar1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -86,7 +86,7 @@
                             fab:fab_colorRipple="@color/ripple_effect_color"
                             fab:fab_size="normal"/>
 
-                        <com.musichero.xmusic.view.MaterialIconView
+                        <com.mihwapp.crazymusic.view.MaterialIconView
                             android:id="@+id/btn_play"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -141,7 +141,7 @@
                 </RelativeLayout>
             </LinearLayout>
 
-            <com.musichero.xmusic.view.CircularProgressBar
+            <com.mihwapp.crazymusic.view.CircularProgressBar
                 android:id="@+id/progressBar1"
                 android:layout_width="@dimen/height_process_bar"
                 android:layout_height="@dimen/height_process_bar"

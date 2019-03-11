@@ -18,7 +18,7 @@
             android:layout_gravity="center_horizontal"
             android:src="@drawable/logo_splash"/>
 
-        <com.musichero.xmusic.view.CircularProgressBar
+        <com.mihwapp.crazymusic.view.CircularProgressBar
             android:id="@+id/progressBar1"
             android:layout_width="@dimen/height_process_bar"
             android:layout_height="@dimen/height_process_bar"

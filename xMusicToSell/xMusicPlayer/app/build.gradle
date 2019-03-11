@@ -14,7 +14,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.musichero.xmusic"
+        applicationId "com.mihwapp.crazymusic"
         minSdkVersion 17
         targetSdkVersion 26
         versionCode 20192901

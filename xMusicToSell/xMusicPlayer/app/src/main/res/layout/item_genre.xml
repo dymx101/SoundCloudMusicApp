@@ -23,7 +23,7 @@
             android:textColor="@color/main_color_text"
             android:textSize="@dimen/text_size_body"/>
 
-        <com.musichero.xmusic.view.MaterialIconView
+        <com.mihwapp.crazymusic.view.MaterialIconView
             android:id="@+id/img_indicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

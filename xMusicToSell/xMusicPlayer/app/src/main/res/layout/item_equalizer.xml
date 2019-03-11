@@ -16,19 +16,19 @@
         android:textColor="@color/main_color_text"
         android:textSize="@dimen/text_size_body"/>
 
-    <com.musichero.xmusic.view.VerticalSeekBarWrapper
+    <com.mihwapp.crazymusic.view.VerticalSeekBarWrapper
         android:layout_width="wrap_content"
         android:layout_height="@dimen/size_equalizer"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/dialog_margin">
 
-        <com.musichero.xmusic.view.VerticalSeekBar
+        <com.mihwapp.crazymusic.view.VerticalSeekBar
             android:id="@+id/mySeekBar"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:splitTrack="false"
             app:seekBarRotation="CW270"/>
-    </com.musichero.xmusic.view.VerticalSeekBarWrapper>
+    </com.mihwapp.crazymusic.view.VerticalSeekBarWrapper>
     <TextView
         android:id="@+id/tv_min_db"
         android:layout_width="wrap_content"

@@ -83,7 +83,7 @@
                 android:src="@drawable/ic_skip_previous_white_36dp"
             />
 
-            <com.musichero.xmusic.view.CircularProgressBar
+            <com.mihwapp.crazymusic.view.CircularProgressBar
                 android:id="@+id/img_status_loading"
                 android:layout_width="@dimen/size_img_small"
                 android:layout_height="@dimen/size_img_small"
@@ -104,7 +104,7 @@
         android:visibility="invisible">
         <fragment
             android:id="@+id/fragment_listen_music"
-            android:name="com.musichero.xmusic.fragment.FragmentYPYPlayerListenMusic"
+            android:name="com.mihwapp.crazymusic.fragment.FragmentYPYPlayerListenMusic"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         </fragment>

@@ -224,5 +224,5 @@
 -keep class com.onesignal.shortcutbadger.impl.ZukHomeBadger { <init>(...); }
 
 # Application classes that will be serialized/deserialized over Gson
--keep class com.musichero.xmusic.model.** { *; }
--keep class com.musichero.xmusic.imageloader.** { *; }
+-keep class mihwapp.xmusic.model.** { *; }
+-keep class mihwapp.xmusic.imageloader.** { *; }
