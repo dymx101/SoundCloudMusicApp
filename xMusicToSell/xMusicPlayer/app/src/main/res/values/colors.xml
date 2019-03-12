@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#80009b</color>
-    <color name="colorPrimaryDark">#610075</color>
-    <color name="colorAccent">#ff4081</color>
-    <color name="colorBackground">#00000000</color>
+    <color name="colorPrimary">#353535</color>
+    <color name="colorPrimaryDark">#242424</color>
+    <color name="colorAccent">#E64A19</color>
+    <color name="colorBackground">#242424</color>
 
     <color name="icon_action_bar_color">#ffffff</color>
-    <color name="icon_color">#ffffff</color>
+    <color name="icon_color">#FFFFFF</color>
 
-    <color name="notification_color">#80009b</color>
+    <color name="notification_color">#1E88E5</color>
 
     <color name="tab_background_color">#1fffffff</color>
-    <color name="tab_indicator_color">#ffffff</color>
+    <color name="tab_indicator_color">#F57C00</color>
     <color name="tab_text_focus_color">#ffffff</color>
     <color name="tab_text_normal_color">#8Affffff</color>
 
@@ -21,11 +21,11 @@
     <color name="main_color_hint_text">#42ffffff</color>
     <color name="main_color_divider">#1fffffff</color>
 
-    <color name="progressbar_color">#ff4081</color>
-    <color name="ripple_effect_color">#000000</color>
-    <color name="card_view_bg_color">#80009b</color>
-    <color name="dialog_bg_color">#80009b</color>
-    <color name="bottom_player_bg_color">#80009b</color>
+    <color name="progressbar_color">#D32F2F</color>
+    <color name="ripple_effect_color">#1B201B</color>
+    <color name="card_view_bg_color">#E64A19</color>
+    <color name="dialog_bg_color">#C44118</color>
+    <color name="bottom_player_bg_color">#111111</color>
 
     <color name="default_image_color">#dedede</color>
     <color name="colorBackgroundSuggestion">#000000</color>
