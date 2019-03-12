@@ -22,21 +22,21 @@
     <string name="title_done">Done</string>
 
     <string name="format_song_selected">%1$s songs selected</string>
-    <string name="info_press_again_to_exit">Press Back button again to exit app</string>
+    <string name="info_press_again_to_exit">Press Back button again to quit app</string>
 
     <string name="info_add_favorite_done">Add to favorite list successfully</string>
     <string name="info_remove_favorite_done">Remove from favorite list successfully</string>
-    <string name="info_playlist_name_existed">Your playlist name is existed. Please change to new one</string>
+    <string name="info_playlist_name_existed">The playlist already exists. Please choose a new name.</string>
 
     <string name="title_recommended">Recommended songs</string>
     <string name="title_favorite">Favorite List</string>
 
     <string name="title_pause_all">Pause All</string>
     <string name="title_resume_all">Resume All</string>
-    <string name="title_no_songs">No Song</string>
+    <string name="title_no_songs">No Songs found</string>
     <string name="title_enter_keyword">Please enter keyword to search</string>
-    <string name="info_delete_song">Are you sure to delete this song?</string>
-    <string name="info_delete_song_done">Deleted song successfully?</string>
+    <string name="info_delete_song">Are you sure to remove the song?</string>
+    <string name="info_delete_song_done">Song Deleted</string>
 
     <string name="title_categories">Categories</string>
     <string name="info_select_country">Select Country</string>
@@ -46,21 +46,21 @@
     <string name="title_select_playlist">Select Playlist</string>
     <string name="info_playlist_error">Playlist name can not be empty</string>
 
-    <string name="info_delete_playlist">Are you sure to delete this playlist?</string>
-    <string name="info_already_favorite">This song has already existed in the favorite list</string>
+    <string name="info_delete_playlist">Are you sure to remove this playlist?</string>
+    <string name="info_already_favorite">This song already exists in the favorite list</string>
 
-    <string name="info_song_already_playlist">This song has already existed in the playlist</string>
-    <string name="info_add_track_playlist">Add track to playlist successfully</string>
-    <string name="info_no_song_play">Please add song to playlist before playing</string>
-    <string name="info_save_all_done">Save the playlist done</string>
+    <string name="info_song_already_playlist">This song already exists in the playlist</string>
+    <string name="info_add_track_playlist">Song Added</string>
+    <string name="info_no_song_play">The playlist is empty, please add songs first.</string>
+    <string name="info_save_all_done">Playlist saved</string>
 
-    <string name="format_number_musics">%1$s musics</string>
-    <string name="format_number_music">%1$s music</string>
+    <string name="format_number_musics">%1$s songs</string>
+    <string name="format_number_music">%1$s song</string>
     <string name="format_now_playing">Now Playing: %1$s/%2$s</string>
 
     <string name="title_songs">Songs</string>
-    <string name="title_playlist">Playlists</string>
-    <string name="title_hot_playlist">Top playlists</string>
+    <string name="title_playlist">Playlist</string>
+    <string name="title_hot_playlist">Top playlist</string>
     <string name="title_playlist_name">Playlist Name</string>
 
     <string name="title_settings">Settings</string>
@@ -69,10 +69,10 @@
     <string name="title_save">Save</string>
     <string name="title_equalizer">Equalizer</string>
     <string name="title_custom">Custom</string>
-    <string name="title_library">My Music</string>
-    <string name="info_rate_me">Rate me now</string>
+    <string name="title_library">My Songs</string>
+    <string name="info_rate_me">Rate the app</string>
 
-    <string name="info_content_share">%1$s now available on PlayStore.Check it out</string>
+    <string name="info_content_share">%1$s is an awesome music player app, check it out today!</string>
     <string name="title_plays">Plays</string>
     <string name="title_playing">Playing</string>
     <string name="format_created">Created: %1$s</string>
@@ -82,10 +82,10 @@
     <string name="info_delete_sound">Do you want to delete this song?</string>
     <string name="info_version_format">v%1$s</string>
 
-    <string name="info_lose_internet">No internet connection.Please check again!</string>
-    <string name="info_empty">Please enter the keyword!</string>
-    <string name="info_close_app">Do you want to exit the application?</string>
-    <string name="info_server_error">We can not connect to server.Please try again!</string>
+    <string name="info_lose_internet">Please check your internet connection.</string>
+    <string name="info_empty">Please enter the keyword</string>
+    <string name="info_close_app">Do you want to quit the app?</string>
+    <string name="info_server_error">Disconnected from server, please try again later.</string>
 
     <string name="menu_add_to_favorite">Add To Favorites</string>
     <string name="menu_remove_to_favorite">Remove From Favorites</string>
@@ -94,7 +94,7 @@
     <string name="menu_add_to_playlist">Add To Playlist</string>
     <string name="menu_delete_song">Delete this song</string>
     <string name="menu_share">Share</string>
-    <string name="info_play_song_error">We can not play this song.Check it again</string>
+    <string name="info_play_song_error">Ops, this song has some issue, please try later.</string>
 
     <string name="format_current_song">Song : %1$s</string>
     <string name="format_current_singer">Author : %1$s</string>
@@ -111,7 +111,7 @@
     <string name="icon_menu">&#xe8cf;</string>
     <string name="icon_pause">&#xea64;</string>
 
-    <string name="info_error_sdcard">Your storage is almost full that why we can not start app.Please clean your storage</string>
+    <string name="info_error_sdcard">The app can not be launched, you might ran out of storage, do some clean up first.</string>
     <string name="format_app_name">%1$s v%2$s</string>
     <string name="info_visit_fb">Visit our fanpage</string>
     <string name="info_visit_website">Visit our website</string>
@@ -119,10 +119,10 @@
     <string name="info_share">Tell a friend</string>
     <string name="info_share_app">Let start with %1$s now %2$s</string>
     <string name="title_refresh">Refresh</string>
-    <string name="title_search_music">Search music</string>
+    <string name="title_search_music">Search for songs</string>
     <string name="title_create">Create</string>
     <string name="info_add_playlist">Added %1$s to %2$s</string>
-    <string name="info_nosong_playlist">No song in this playlist</string>
+    <string name="info_nosong_playlist">The playlist is empty</string>
 
     <string name="title_play_all">Play all</string>
     <string name="title_rename_playlist">Rename playlist</string>
@@ -150,8 +150,8 @@
     <string name="title_tab_my_playlist">Playlist</string>
 
     <string name="info_write_setting_permission">We need to have the write_setting permission to set ringtone or notification.Do you want to supply it now?</string>
-    <string name="info_set_ringtone_successfully">Set as a ringtone successfully</string>
-    <string name="info_set_notification_successfully">Set as a notification successfully</string>
+    <string name="info_set_ringtone_successfully">Ringtone has been set.</string>
+    <string name="info_set_notification_successfully">Notification has been set.</string>
     <string name="title_set_as_ringtone">Set As Ringtone</string>
     <string name="title_set_as_noti">Set As Notification</string>
     <string name="title_artist">Artist</string>
