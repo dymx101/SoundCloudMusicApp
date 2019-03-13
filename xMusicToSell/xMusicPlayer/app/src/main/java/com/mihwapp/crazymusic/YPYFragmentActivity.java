@@ -493,7 +493,7 @@ public class YPYFragmentActivity extends AppCompatActivity implements IXMusicCon
         int mNoId = R.string.title_no;
         int mTitleId = R.string.title_confirm;
         int mYesId = R.string.title_yes;
-        int iconId = R.drawable.ic_launcher;
+        int iconId = R.mipmap.ic_launcher;
         int messageId = R.string.info_close_app;
 
         createFullDialog(iconId, mTitleId, mYesId, mNoId, getString(messageId), () -> {
