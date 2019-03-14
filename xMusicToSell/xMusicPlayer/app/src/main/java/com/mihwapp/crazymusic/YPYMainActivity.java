@@ -198,7 +198,10 @@ public class YPYMainActivity extends YPYFragmentActivity implements IDBMusicPlay
 
         checkConfigure();
 
-        showDisclaimer();
+        if (!YPYSettingManager.getHasShownDisclaimer(this)) {
+            showDisclaimer();
+            YPYSettingManager.setHasShownDisclaimer(this, true);
+        }
     }
 
     private void showDisclaimer() {

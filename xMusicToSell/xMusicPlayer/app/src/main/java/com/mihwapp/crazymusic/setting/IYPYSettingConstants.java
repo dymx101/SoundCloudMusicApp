@@ -2,6 +2,7 @@ package com.mihwapp.crazymusic.setting;
 
 public abstract interface IYPYSettingConstants {
 
+	public static final String KEY_HAS_SHOWN_DISCLAIMER = "key_has_shown_disclaimer";
 	public static final String KEY_ONLINE = "online";
 	public static final String KEY_SHUFFLE = "shuffle";
 	public static final String KEY_REPEAT1 = "repeat1";

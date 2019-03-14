@@ -61,6 +61,14 @@ public class YPYSettingManager implements IYPYSettingConstants {
 		saveSetting(mContext, KEY_ONLINE, String.valueOf(mValue));
 	}
 
+	public static boolean getHasShownDisclaimer(Context mContext){
+		return Boolean.parseBoolean(getSetting(mContext, KEY_HAS_SHOWN_DISCLAIMER, "false"));
+	}
+
+	public static void setHasShownDisclaimer(Context mContext, boolean mValue){
+		saveSetting(mContext, KEY_HAS_SHOWN_DISCLAIMER, String.valueOf(mValue));
+	}
+
 
 	public static void setShuffle(Context mContext, boolean mValue){
 		saveSetting(mContext, KEY_SHUFFLE, String.valueOf(mValue));
