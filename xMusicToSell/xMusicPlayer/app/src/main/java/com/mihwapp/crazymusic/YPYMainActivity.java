@@ -1,5 +1,9 @@
 package com.mihwapp.crazymusic;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.MatrixCursor;
 import android.graphics.Color;
@@ -15,10 +19,14 @@ import androidx.fragment.app.Fragment;
 import androidx.core.view.ViewCompat;
 import android.text.Html;
 import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -190,6 +198,18 @@ public class YPYMainActivity extends YPYFragmentActivity implements IDBMusicPlay
 
         checkConfigure();
 
+        showDisclaimer();
+    }
+
+    private void showDisclaimer() {
+
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+
+        View dialogView = getLayoutInflater().inflate(R.layout.dlg_disclaimer, null);
+        dialogBuilder.setView(dialogView)
+                .setPositiveButton("Okay", (dialogInterface, i) -> dialogInterface.dismiss())
+                .create()
+                .show();
     }
 
     private void checkConfigure(){
@@ -517,10 +537,13 @@ public class YPYMainActivity extends YPYFragmentActivity implements IDBMusicPlay
                 startActivity(Intent.createChooser(sharingIntent, getString(R.string.info_share)));
                 break;
             case R.id.action_contact_us:
-                ShareActionUtils.shareViaEmail(this, YOUR_CONTACT_EMAIL, "", "");
+                ShareActionUtils.shareViaEmail(this, YOUR_CONTACT_EMAIL, "Feedback for TTPod Music Player", "");
                 break;
             case R.id.action_visit_website:
                 goToUrl(getString(R.string.info_visit_website), URL_WEBSITE);
+                break;
+            case R.id.action_disclaimer:
+                showDisclaimer();
                 break;
             default:
                 break;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Crazy Music</string>
+    <string name="app_name">TTPod</string>
     <string name="info_copyright">©PhotoMagic</string>
 
     <string name="action_settings">Settings</string>
@@ -114,9 +114,9 @@
     <string name="info_error_sdcard">The app can not be launched, you might ran out of storage, do some clean up first.</string>
     <string name="format_app_name">%1$s v%2$s</string>
     <string name="info_visit_fb">Visit our fanpage</string>
-    <string name="info_visit_website">Visit our website</string>
-    <string name="info_send_email">Contact us</string>
-    <string name="info_share">Tell a friend</string>
+    <string name="info_visit_website">Privacy Policy</string>
+    <string name="info_send_email">Feedback</string>
+    <string name="info_share">Share</string>
     <string name="info_share_app">Let start with %1$s now %2$s</string>
     <string name="title_refresh">Refresh</string>
     <string name="title_search_music">Search for songs</string>
@@ -157,6 +157,19 @@
     <string name="title_artist">Artist</string>
     <string name="title_song">Song</string>
     <string name="title_edit_song">Edit Song</string>
+    <string name="lbl_welcome">Welcome!</string>
+    <string name="lbl_welcome_message">TTPod Music is a Free Online Music Player with a song library of over 5,000,000 songs.
+
+\n\nWhat can you do with TTPod Music?
+\n- Search and play over 5,000,000 songs
+\n- Create Playlist with local or online songs
+\n- Setup timer for sleep mode
+\n- Adjust sound effect using Equalizer
+\n- Different Genres to choose
+    </string>
+
+    <string name="lbl_disclaimer">Disclaimer</string>
+    <string name="lbl_disclaimer_message">We are NOT the Copyright Owners of any of the songs. The app uses \'SoundCloud\' Public API to stream music.</string>
 
 
 </resources>

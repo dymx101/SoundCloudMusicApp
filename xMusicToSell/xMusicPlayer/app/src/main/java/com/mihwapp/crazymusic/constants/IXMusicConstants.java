@@ -5,7 +5,7 @@ public interface IXMusicConstants {
 	
 	public static final boolean DEBUG = false;
 
-	public static final String ANDROID8_CHANNEL_ONE_NAME = "XMusicChannel";//you can change the channel name for android 8.0
+	public static final String ANDROID8_CHANNEL_ONE_NAME = "CrazyMusicChannel";//you can change the channel name for android 8.0
 
 	public static final boolean SHOW_ADS = true; //enable all ads
 	public static final boolean SHOW_BANNER_ADS_IN_HOME = true; // show admob banner in home screen
@@ -23,12 +23,12 @@ public interface IXMusicConstants {
 	public static final String ADMOB_BANNER_ID = "ca-app-pub-7635376757557763/7943615342";
 	public static final String ADMOB_INTERSTITIAL_ID = "ca-app-pub-7635376757557763/9065125320";
 	public static final String ADMOB_APP_ID = "ca-app-pub-7635376757557763~5982778361";
-	public static final String DIR_CACHE = "xmusic_app";
+	public static final String DIR_CACHE = "crazy_music_app";
 
 	public static final boolean SHOW_SOUND_CLOUD_TAB = true; //enable sound cloud tab
 
-	public static final String URL_WEBSITE = "URL_WEBSITE";
-	public static final String YOUR_CONTACT_EMAIL = "YOUR_CONTACT_EMAIL";
+	public static final String URL_WEBSITE = "http://dymx102.github.io/PhotoMagicSite/privacy/ttpod_music_player.html";
+	public static final String YOUR_CONTACT_EMAIL = "dymx103@gmail.com";
 	public static final String PREFIX_UNKNOWN = "<unknown>";
 
 

@@ -40,5 +40,8 @@
           android:title="@string/info_visit_website"
           app:showAsAction="never"/>
 
-
+    <item android:id="@+id/action_disclaimer"
+        android:orderInCategory="110"
+        android:title="@string/lbl_disclaimer"
+        app:showAsAction="never"/>
 </menu>
