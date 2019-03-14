@@ -480,7 +480,8 @@ public class TotalDataManager implements IXMusicConstants, IYPYSettingConstants 
     public void readConfigure(Context mContext) {
         String data = IOUtils.readStringFromAssets(mContext, FILE_CONFIGURE);
         configureModel = JsonParsingUtils.parsingConfigureModel(data);
-        if(configureModel!=null){
+        if(configureModel!=null) {
+            configureModel.randomizeChartConfig();
             YPYSettingManager.setBackground(mContext,configureModel.getBg());
         }
     }

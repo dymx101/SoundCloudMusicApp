@@ -3,6 +3,7 @@ package com.mihwapp.crazymusic.model;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * @author:dotrungbao
@@ -125,5 +126,19 @@ public class ConfigureModel {
 
     public void setFilters(ArrayList<String> filters) {
         this.filters = filters;
+    }
+
+    public void randomizeChartConfig() {
+        Random rand = new Random();
+
+        String[] genres = {"all-music", "danceedm", "trap", "ambient", "house", "deephouse",
+                "disco", "dubstep", "electronic", "hiphoprap", "jazzblues",
+                "latin", "metal", "pop", "rbsoul", "rock"};
+        int value = rand.nextInt(genres.length);
+        topChartGenre = genres[value];
+
+        String[] kinds = {"top", "trending"};
+        value = rand.nextInt(kinds.length);
+        topChartKind = kinds[value];
     }
 }
