@@ -62,10 +62,11 @@ public class YPYSplashActivity extends YPYFragmentActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (!isCheckGoogle) {
-            isCheckGoogle = true;
-            checkGooglePlayService();
-        }
+//        if (!isCheckGoogle) {
+//            isCheckGoogle = true;
+//            checkGooglePlayService();
+//        }
+        startInit();
     }
 
 
