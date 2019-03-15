@@ -1,9 +1,6 @@
 package com.mihwapp.crazymusic;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.MatrixCursor;
 import android.graphics.Color;
@@ -12,26 +9,20 @@ import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import com.google.android.material.appbar.AppBarLayout;
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
-import com.google.android.material.tabs.TabLayout;
-import androidx.fragment.app.Fragment;
-import androidx.core.view.ViewCompat;
 import android.text.Html;
 import android.text.TextUtils;
-import android.view.Gravity;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.tabs.TabLayout;
 import com.mihwapp.crazymusic.abtractclass.fragment.DBFragment;
 import com.mihwapp.crazymusic.abtractclass.fragment.DBFragmentAdapter;
 import com.mihwapp.crazymusic.adapter.SuggestionAdapter;
@@ -66,6 +57,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Locale;
 
+import androidx.core.view.ViewCompat;
+import androidx.fragment.app.Fragment;
 import butterknife.BindView;
 
 /**
