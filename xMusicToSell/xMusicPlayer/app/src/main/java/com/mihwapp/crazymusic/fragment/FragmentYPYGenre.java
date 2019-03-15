@@ -19,6 +19,7 @@ import com.mihwapp.crazymusic.model.GenreModel;
 import com.mihwapp.crazymusic.view.CircularProgressBar;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import butterknife.BindView;
 
@@ -57,7 +58,7 @@ public class FragmentYPYGenre extends DBFragment implements IXMusicConstants {
             mContext.setUpRecyclerViewAsListView(mRecyclerViewTrack,null);
         }
         else{
-            mContext.setUpRecyclerViewAsGridView(mRecyclerViewTrack,2);
+            mContext.setUpRecyclerViewAsGridView(mRecyclerViewTrack,3);
         }
         if (isFirstInTab()) {
             startLoadData();
@@ -82,7 +83,7 @@ public class FragmentYPYGenre extends DBFragment implements IXMusicConstants {
             ArrayList<GenreModel> mList = mContext.mTotalMng.getListGenreObjects();
             if(mList==null){
                 mContext.mTotalMng.readGenreData(mContext);
-                mList=mContext.mTotalMng.getListGenreObjects();
+                mList = mContext.mTotalMng.getListGenreObjects();
             }
             final ArrayList<GenreModel> finalMList = mList;
             mContext.runOnUiThread(() -> {
@@ -98,6 +99,7 @@ public class FragmentYPYGenre extends DBFragment implements IXMusicConstants {
             this.mListGenres.clear();
             this.mListGenres = null;
         }
+        Collections.reverse(mListTracks);
         this.mListGenres = mListTracks;
         if (mListTracks != null && mListTracks.size() > 0) {
             mGenreAdapter = new GenreAdapter(mContext, mListTracks,mTypeUI);

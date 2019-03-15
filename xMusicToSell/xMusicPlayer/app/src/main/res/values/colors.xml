@@ -23,7 +23,8 @@
 
     <color name="progressbar_color">#C2185B</color>
     <color name="ripple_effect_color">#1B201B</color>
-    <color name="card_view_bg_color">#25286D</color>
+    <color name="card_view_bg_color">#013D79</color>
+    <color name="card_view_bg_color_2">#033053</color>
     <color name="dialog_bg_color">#2F3038</color>
     <color name="bottom_player_bg_color">#111111</color>
 

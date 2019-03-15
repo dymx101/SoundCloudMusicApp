@@ -23,7 +23,7 @@
             android:layout_width="@dimen/height_process_bar"
             android:layout_height="@dimen/height_process_bar"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/dialog_margin"
+            android:layout_marginTop="20dp"
             android:visibility="invisible"
             app:cpb_color="@color/progressbar_color"
             app:cpb_stroke_width="@dimen/stroke_process"/>
