@@ -152,8 +152,6 @@ public class FragmentYPYTopChart extends DBFragment implements IXMusicConstants 
 
     }
 
-
-
     @Override
     public void onDestroy() {
         super.onDestroy();

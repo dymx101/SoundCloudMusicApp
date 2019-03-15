@@ -23,6 +23,7 @@ import android.provider.MediaStore;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
+import android.util.TimeUtils;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -77,6 +78,9 @@ import com.triggertrap.seekarc.SeekArc;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -101,6 +105,8 @@ import jp.wasabeef.glide.transformations.BlurTransformation;
 public class YPYFragmentActivity extends AppCompatActivity implements IXMusicConstants, IYPYMusicConstant, IDBFragmentConstants {
 
     public static final String TAG = YPYFragmentActivity.class.getSimpleName();
+
+    private long adShowInterval = 300;
 
     private Dialog mProgressDialog;
 
@@ -327,8 +333,31 @@ public class YPYFragmentActivity extends AppCompatActivity implements IXMusicCon
 
     }
 
+    void saveAdShowTime(Date showTime) {
+        YPYSettingManager.setShowAdsTime(this, showTime.getTime());
+    }
+
+    Date adShowTime() {
+        long milliseconds = YPYSettingManager.getShowAdsTime(this);
+        return new Date(milliseconds);
+    }
+
+    Boolean goodTimeToShowAds() {
+        Date adShowTime = adShowTime();
+        Date now = new Date();
+
+        if (adShowTime.getTime() <= 0) {
+            saveAdShowTime(now);
+            return false;
+        }
+
+        long interval = now.getTime() - adShowTime.getTime();
+        long seconds = TimeUnit.MILLISECONDS.toSeconds(interval);
+        return seconds > adShowInterval;
+    }
+
     public void showInterstitial(final IYPYCallback mCallback) {
-        boolean b = SHOW_ADS;
+        boolean b = SHOW_ADS && goodTimeToShowAds();
         if (ApplicationUtils.isOnline(this) && b) {
             interstitialAd = new InterstitialAd(getApplicationContext());
             interstitialAd.setAdUnitId(ADMOB_INTERSTITIAL_ID);
@@ -341,6 +370,7 @@ public class YPYFragmentActivity extends AppCompatActivity implements IXMusicCon
                     try{
                         if(interstitialAd !=null){
                             interstitialAd.show();
+                            saveAdShowTime(new Date());
                         }
                     }
                     catch (Exception e){

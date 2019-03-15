@@ -11,6 +11,7 @@ public abstract interface IYPYSettingConstants {
 	public static final String KEY_SEARCH_TYPE = "search_type";
 	public static final String KEY_RATE_APP = "rate_app";
 	public static final String KEY_TIME_SLEEP = "time_sleep";
+	public static final String KEY_ADS_SHOW_TIME = "key_ads_show_time";
 
 	public static final String KEY_EQUALIZER_ON = "equalizer";
 	public static final String KEY_EQUALIZER_PRESET = "equalizer_preset";

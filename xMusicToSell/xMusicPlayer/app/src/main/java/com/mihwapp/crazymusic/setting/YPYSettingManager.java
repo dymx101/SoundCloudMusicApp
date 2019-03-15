@@ -129,6 +129,14 @@ public class YPYSettingManager implements IYPYSettingConstants {
 		saveSetting(mContext, KEY_TIME_SLEEP, String.valueOf(mValue));
 	}
 
+	public static long getShowAdsTime(Context mContext){
+        return Long.parseLong(getSetting(mContext, KEY_ADS_SHOW_TIME, "0"));
+	}
+
+	public static void setShowAdsTime(Context mContext, long mValue){
+		saveSetting(mContext, KEY_ADS_SHOW_TIME, String.valueOf(mValue));
+	}
+
 	public static void setNewRepeat(Context mContext, int mValue){
 		saveSetting(mContext, KEY_REPEAT1, String.valueOf(mValue));
 	}
