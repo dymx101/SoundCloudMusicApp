@@ -20,9 +20,9 @@ public interface IXMusicConstants {
 	public static final int REMIND_TIME_INTERVAL=1;//it is the number repeat days to show dialog rate.default is 1
 
 	public static final String SOUND_CLOUD_CLIENT_ID = "73a3db34973aee46de488c0b902b5cc3";
-	public static final String ADMOB_BANNER_ID = "ca-app-pub-7635376757557763/7943615342";
-	public static final String ADMOB_INTERSTITIAL_ID = "ca-app-pub-7635376757557763/9065125320";
-	public static final String ADMOB_APP_ID = "ca-app-pub-7635376757557763~5982778361";
+	public static final String ADMOB_BANNER_ID = "ca-app-pub-7635376757557763/4685608796";
+	public static final String ADMOB_INTERSTITIAL_ID = "ca-app-pub-7635376757557763/4600357626";
+	public static final String ADMOB_APP_ID = "ca-app-pub-7635376757557763~3861991027";
 	public static final String DIR_CACHE = "crazy_music_app";
 
 	public static final boolean SHOW_SOUND_CLOUD_TAB = true; //enable sound cloud tab
