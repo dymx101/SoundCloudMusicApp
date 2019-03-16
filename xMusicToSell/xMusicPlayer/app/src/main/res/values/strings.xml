@@ -104,16 +104,15 @@
     </string-array>
 
 
-    <string name="icon_play">&#xea7d;</string>
-    <string name="icon_add">&#xea81;</string>
-    <string name="icon_check">&#xe867;</string>
-    <string name="icon_chevron_right">&#xe876;</string>
-    <string name="icon_menu">&#xe8cf;</string>
-    <string name="icon_pause">&#xea64;</string>
+    <string name="icon_play" translatable="false">&#xea7d;</string>
+    <string name="icon_add" translatable="false">&#xea81;</string>
+    <string name="icon_check" translatable="false">&#xe867;</string>
+    <string name="icon_chevron_right" translatable="false">&#xe876;</string>
+    <string name="icon_menu" translatable="false">&#xe8cf;</string>
+    <string name="icon_pause" translatable="false">&#xea64;</string>
 
     <string name="info_error_sdcard">The app can not be launched, you might ran out of storage, do some clean up first.</string>
     <string name="format_app_name">%1$s v%2$s</string>
-    <string name="info_visit_fb">Visit our fanpage</string>
     <string name="info_visit_website">Privacy Policy</string>
     <string name="info_send_email">Feedback</string>
     <string name="info_share">Share</string>
@@ -128,12 +127,9 @@
     <string name="title_rename_playlist">Rename playlist</string>
     <string name="title_delete_playlist">Delete playlist</string>
 
-
-    <string name="title_grant">Grant</string>
     <string name="info_permission_denied">Sorry permission denied.We can not open this app on your device, please try again later.</string>
     <string name="format_request_permision">%1$s will need to have read/write permission your sdcard to save favorite, playlist data etc...Do you want to grant it for our apps now?</string>
 
-    <string name="title_advertisement">Advertisement</string>
     <string name="title_bass">Bass</string>
     <string name="title_virtualizer">Virtualizer</string>
     <string name="title_reverb">Reverb</string>
