@@ -106,8 +106,6 @@ public class YPYFragmentActivity extends AppCompatActivity implements IXMusicCon
 
     public static final String TAG = YPYFragmentActivity.class.getSimpleName();
 
-    private long adShowInterval = 300;
-
     private Dialog mProgressDialog;
 
     private int screenWidth;
@@ -148,10 +146,6 @@ public class YPYFragmentActivity extends AppCompatActivity implements IXMusicCon
     public int mIconColor;
     private Unbinder mBind;
 
-    private Handler mHandlerAds = new Handler();
-    private InterstitialAd interstitialAd;
-    private AdView adView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -168,8 +162,6 @@ public class YPYFragmentActivity extends AppCompatActivity implements IXMusicCon
 
         this.mTotalMng = TotalDataManager.getInstance();
         setStatusBarTranslucent(true);
-
-        MobileAds.initialize(this,ADMOB_APP_ID);
 
         this.mBlurBgTranform = new BlurTransformation();
 
@@ -301,131 +293,10 @@ public class YPYFragmentActivity extends AppCompatActivity implements IXMusicCon
 
     }
 
-    public void setUpLayoutAdmob() {
-        mLayoutAds = findViewById(R.id.layout_ads);
-        boolean b = SHOW_ADS;
-        if (b) {
-            if (ApplicationUtils.isOnline(this)
-                    && mLayoutAds != null && mLayoutAds.getChildCount()==0) {
-                adView = new AdView(this);
-                adView.setAdUnitId(ADMOB_BANNER_ID);
-                adView.setAdSize(AdSize.SMART_BANNER);
-                mLayoutAds.addView(adView);
-                AdRequest mAdRequest = new AdRequest.Builder().addTestDevice(ADMOB_TEST_DEVICE).build();
-                adView.setAdListener(new com.google.android.gms.ads.AdListener() {
-                    @Override
-                    public void onAdLoaded() {
-                        super.onAdLoaded();
-                        DBLog.d(TAG, "===========>Add loaded");
-                        showAds();
-
-                    }
-                });
-                adView.loadAd(mAdRequest);
-                hideAds();
-                return;
-
-            }
-        }
-        if(mLayoutAds.getChildCount()==0){
-            hideAds();
-        }
-
-    }
-
-    void saveAdShowTime(Date showTime) {
-        YPYSettingManager.setShowAdsTime(this, showTime.getTime());
-    }
-
-    Date adShowTime() {
-        long milliseconds = YPYSettingManager.getShowAdsTime(this);
-        return new Date(milliseconds);
-    }
-
-    Boolean goodTimeToShowAds() {
-        Date adShowTime = adShowTime();
-        Date now = new Date();
-
-        if (adShowTime.getTime() <= 0) {
-            saveAdShowTime(now);
-            return false;
-        }
-
-        long interval = now.getTime() - adShowTime.getTime();
-        long seconds = TimeUnit.MILLISECONDS.toSeconds(interval);
-        return seconds > adShowInterval;
-    }
-
-    public void showInterstitial(final IYPYCallback mCallback) {
-        boolean b = SHOW_ADS && goodTimeToShowAds();
-        if (ApplicationUtils.isOnline(this) && b) {
-            interstitialAd = new InterstitialAd(getApplicationContext());
-            interstitialAd.setAdUnitId(ADMOB_INTERSTITIAL_ID);
-            AdRequest adRequest = new AdRequest.Builder().addTestDevice(ADMOB_TEST_DEVICE).build();
-            interstitialAd.setAdListener(new AdListener() {
-                @Override
-                public void onAdLoaded() {
-                    super.onAdLoaded();
-                    mHandlerAds.removeCallbacksAndMessages(null);
-                    try{
-                        if(interstitialAd !=null){
-                            interstitialAd.show();
-                            saveAdShowTime(new Date());
-                        }
-                    }
-                    catch (Exception e){
-                        e.printStackTrace();
-                    }
-
-                }
-
-                @Override
-                public void onAdClosed() {
-                    super.onAdClosed();
-                    if (mCallback != null) {
-                        mCallback.onAction();
-                    }
-                }
-
-                @Override
-                public void onAdFailedToLoad(int i) {
-                    super.onAdFailedToLoad(i);
-                    if (mCallback != null) {
-                        mCallback.onAction();
-                    }
-                }
-            });
-            interstitialAd.loadAd(adRequest);
-            mHandlerAds.postDelayed(() -> {
-                interstitialAd=null;
-                if (mCallback != null) {
-                    mCallback.onAction();
-                }
-            },TIME_OUT_LOAD_ADS);
-            return;
-        }
-        if (mCallback != null) {
-            mCallback.onAction();
-        }
-
-    }
-
-    public void showAds() {
-        mLayoutAds.setVisibility(View.VISIBLE);
-    }
-
-    public void hideAds() {
-        mLayoutAds.setVisibility(View.GONE);
-    }
-
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if(adView!=null){
-            adView.destroy();
-        }
-        mHandlerAds.removeCallbacksAndMessages(null);
+
         if(mBind!=null){
             mBind.unbind();
         }

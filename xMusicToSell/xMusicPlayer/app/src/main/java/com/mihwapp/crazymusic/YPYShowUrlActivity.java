@@ -6,10 +6,12 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
+import com.mihwapp.crazymusic.utils.AdsManager;
 import com.mihwapp.crazymusic.utils.ApplicationUtils;
 import com.mihwapp.crazymusic.utils.DBLog;
 import com.mihwapp.crazymusic.utils.StringUtils;
@@ -71,14 +73,10 @@ public class YPYShowUrlActivity extends YPYFragmentActivity{
         });
         this.mWebViewShowPage.loadUrl(mUrl);
 
-        if(!ApplicationUtils.isOnline(this)){
-            registerNetworkBroadcastReceiver(isNetworkOn -> {
-                if(isNetworkOn){
-                    setUpLayoutAdmob();
-                }
-            });
+        ViewGroup vg = findViewById(R.id.layout_ads);
+        if (vg != null) {
+            AdsManager.Companion.getInstance().installBanner(vg);
         }
-        setUpLayoutAdmob();
     }
 
 

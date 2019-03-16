@@ -15,6 +15,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -45,6 +46,7 @@ import com.mihwapp.crazymusic.model.GenreModel;
 import com.mihwapp.crazymusic.model.PlaylistModel;
 import com.mihwapp.crazymusic.model.TrackModel;
 import com.mihwapp.crazymusic.setting.YPYSettingManager;
+import com.mihwapp.crazymusic.utils.AdsManager;
 import com.mihwapp.crazymusic.utils.ApplicationUtils;
 import com.mihwapp.crazymusic.utils.DownloadUtils;
 import com.mihwapp.crazymusic.utils.ShareActionUtils;
@@ -178,16 +180,10 @@ public class YPYMainActivity extends YPYFragmentActivity implements IDBMusicPlay
                         ((DBFragment) mFragment).onNetworkChange(isNetworkOn);
                     }
                 }
-                boolean b = SHOW_BANNER_ADS_IN_HOME;
-                if (isNetworkOn && b) {
-                    setUpLayoutAdmob();
-                }
+
             });
         }
         boolean b = SHOW_BANNER_ADS_IN_HOME;
-        if (b) {
-            setUpLayoutAdmob();
-        }
 
         checkConfigure();
 
@@ -195,6 +191,12 @@ public class YPYMainActivity extends YPYFragmentActivity implements IDBMusicPlay
             showDisclaimer();
             YPYSettingManager.setHasShownDisclaimer(this, true);
         }
+
+        ViewGroup vg = findViewById(R.id.layout_ads);
+        if (vg != null) {
+            AdsManager.Companion.getInstance().installBanner(vg);
+        }
+
     }
 
     private void showDisclaimer() {
@@ -396,6 +398,8 @@ public class YPYMainActivity extends YPYFragmentActivity implements IDBMusicPlay
                 hiddenKeyBoardForSearchView();
                 mViewpager.setCurrentItem(tab.getPosition());
                 ((DBFragment) mListHomeFragments.get(tab.getPosition())).startLoadData();
+
+                AdsManager.Companion.getInstance().showInterstitial();
             }
 
             @Override
