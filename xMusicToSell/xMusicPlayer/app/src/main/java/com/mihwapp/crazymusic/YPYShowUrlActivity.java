@@ -72,11 +72,6 @@ public class YPYShowUrlActivity extends YPYFragmentActivity{
             }
         });
         this.mWebViewShowPage.loadUrl(mUrl);
-
-        ViewGroup vg = findViewById(R.id.layout_ads);
-        if (vg != null) {
-            AdsManager.Companion.getInstance().installBanner(vg);
-        }
     }
 
 
@@ -119,5 +114,12 @@ public class YPYShowUrlActivity extends YPYFragmentActivity{
         return super.onKeyDown(keyCode, event);
     }
 
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        ViewGroup vg = findViewById(R.id.layout_ads);
+        if (vg != null) {
+            AdsManager.Companion.getInstance().installBanner(vg);
+        }
+    }
 }

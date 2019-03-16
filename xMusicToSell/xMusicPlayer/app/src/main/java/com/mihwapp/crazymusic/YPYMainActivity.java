@@ -142,6 +142,15 @@ public class YPYMainActivity extends YPYFragmentActivity implements IDBMusicPlay
     private Drawable mHomeIconDrawable;
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        ViewGroup vg = findViewById(R.id.layout_ads);
+        if (vg != null) {
+            AdsManager.Companion.getInstance().installBanner(vg);
+        }
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_app_bar_main);
@@ -191,12 +200,6 @@ public class YPYMainActivity extends YPYFragmentActivity implements IDBMusicPlay
             showDisclaimer();
             YPYSettingManager.setHasShownDisclaimer(this, true);
         }
-
-        ViewGroup vg = findViewById(R.id.layout_ads);
-        if (vg != null) {
-            AdsManager.Companion.getInstance().installBanner(vg);
-        }
-
     }
 
     private void showDisclaimer() {
