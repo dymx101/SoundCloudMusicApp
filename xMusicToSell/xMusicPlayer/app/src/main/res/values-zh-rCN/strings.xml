@@ -13,82 +13,45 @@
     <string name="title_info">信息</string>
     <string name="title_options">选项</string>
     <string name="title_confirm">确认</string>
-    <string name="title_warning">警告</string>
-    <string name="title_share">分享</string>
-    <string name="title_back">返回</string>
+
     <string name="title_unknown">未知</string>
     <string name="title_timer">计时器</string>
-    <string name="title_about_us">关于我们</string>
     <string name="title_done">完成</string>
 
-    <string name="format_song_selected">%1$s 歌曲被选择</string>
     <string name="info_press_again_to_exit">请再次点击返回键退出应用</string>
 
-    <string name="info_add_favorite_done">成功加入收藏列表</string>
-    <string name="info_remove_favorite_done">已从收藏列表删除</string>
     <string name="info_playlist_name_existed">播放列表已存在，请输入新的名称.</string>
 
-    <string name="title_recommended">推荐歌曲</string>
-    <string name="title_favorite">收藏列表</string>
-
-    <string name="title_pause_all">暂停全部</string>
-    <string name="title_resume_all">取消暂停</string>
     <string name="title_no_songs">没有歌曲</string>
-    <string name="title_enter_keyword">请输入搜索关键字</string>
     <string name="info_delete_song">您确定要删除这首歌曲吗?</string>
     <string name="info_delete_song_done">歌曲已删除</string>
 
-    <string name="title_categories">分类</string>
-    <string name="info_select_country">选择国家</string>
     <string name="title_add_playlist">添加播放列表</string>
-    <string name="title_add_track">添加歌曲</string>
-    <string name="title_default_playlist">我的收藏</string>
     <string name="title_select_playlist">选择播放列表</string>
     <string name="info_playlist_error">播放列表名称不能为空</string>
 
     <string name="info_delete_playlist">您确认要删除这个播放列表吗?</string>
-    <string name="info_already_favorite">收藏列表已有这首歌曲</string>
 
     <string name="info_song_already_playlist">播放列表已有这首歌曲</string>
-    <string name="info_add_track_playlist">歌曲已添加</string>
-    <string name="info_no_song_play">播放列表是空的，请添加歌曲.</string>
-    <string name="info_save_all_done">播放列表已保存</string>
 
     <string name="format_number_musics">%1$s 首歌曲</string>
     <string name="format_number_music">%1$s 首歌曲</string>
-    <string name="format_now_playing">正在播放: %1$s/%2$s</string>
 
-    <string name="title_songs">歌曲</string>
     <string name="title_playlist">播放列表</string>
-    <string name="title_hot_playlist">热门播放列表</string>
     <string name="title_playlist_name">播放列表名称</string>
 
     <string name="title_settings">设置</string>
-    <string name="title_select_song">选择歌曲</string>
 
     <string name="title_save">保存</string>
     <string name="title_equalizer">均衡器</string>
     <string name="title_custom">自定义</string>
-    <string name="title_library">我的歌曲</string>
     <string name="info_rate_me">去评价</string>
-
-    <string name="info_content_share">%1$s 是一款很棒的音乐播放器, 赶快下载倾听百万歌曲!</string>
-    <string name="title_plays">播放</string>
-    <string name="title_playing">正在播放</string>
-    <string name="format_created">创建: %1$s</string>
-    <string name="title_tag">标签</string>
-    <string name="info_loading_more">加载更多</string>
-
-    <string name="info_delete_sound">您想要删除这首歌曲吗?</string>
-    <string name="info_version_format">v%1$s</string>
 
     <string name="info_lose_internet">请检查您的网络连接.</string>
     <string name="info_empty">请输入关键字</string>
     <string name="info_close_app">您是否想退出应用?</string>
     <string name="info_server_error">从服务器断开, 请晚一点再试试.</string>
 
-    <string name="menu_add_to_favorite">加入收藏</string>
-    <string name="menu_remove_to_favorite">从收藏删除</string>
     <string name="menu_remove_to_playlist">从播放列表删除</string>
 
     <string name="menu_add_to_playlist">加入播放列表</string>
@@ -104,12 +67,11 @@
     </string-array>
 
     <string name="info_error_sdcard">无法启动应用, 可能是因为您的存储空间不足, 请先清理一下手机存储空间.</string>
-    <string name="format_app_name">%1$s v%2$s</string>
     <string name="info_visit_website">隐私政策</string>
     <string name="info_send_email">用户反馈</string>
     <string name="info_share">分享</string>
     <string name="info_share_app">%1$s 最炫酷的音乐播放器，享受百万曲库，现在就下载: %2$s</string>
-    <string name="title_refresh">刷新</string>
+
     <string name="title_search_music">搜索歌曲</string>
     <string name="title_create">创建</string>
     <string name="info_add_playlist">将 %1$s 加入 %2$s</string>
@@ -120,11 +82,9 @@
     <string name="title_delete_playlist">删除播放列表</string>
 
     <string name="info_permission_denied">抱歉由于权限请求被拒绝，我们无法启动应用，请稍候重试。</string>
-    <string name="format_request_permision">%1$s 需要存储卡的读写许可，以便保存收藏及播放列表等数据，请问您是否允许授予该权限？</string>
 
     <string name="title_bass">低音增强</string>
     <string name="title_virtualizer">现实虚拟</string>
-    <string name="title_reverb">混响</string>
     <string name="title_sleep_mode">睡眠模式</string>
     <string name="title_off">关闭</string>
 
