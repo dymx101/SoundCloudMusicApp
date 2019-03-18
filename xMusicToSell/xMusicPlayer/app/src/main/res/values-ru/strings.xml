@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name = "app_name"> TTPod </string>
+        <string name = "info_copyright"> © PhotoMagic </string>
+
+        <string name = "action_settings"> Настройки </string>
+        <string name = "info_loading"> Пожалуйста, подождите ... </string>
+        <string name = "title_yes"> Да </string>
+        <string name = "title_no"> Нет </string>
+        <string name = "title_ok"> Хорошо </string>
+        <string name = "title_cancel"> Отмена </string>
+        <string name = "title_info"> Информация </string>
+        <string name = "title_options"> Параметры </string>
+        <string name = "title_confirm"> Подтвердить </string>
+
+        <string name = "title_unknown"> Неизвестно </string>
+        <string name = "title_timer"> Таймер </string>
+        <string name = "title_done"> Готово </string>
+
+        <string name = "info_press_again_to_exit"> Нажмите кнопку «Назад» еще раз, чтобы выйти из приложения </string>
+
+        <string name = "info_playlist_name_existed"> Плейлист уже существует. Пожалуйста, выберите новое имя. </string>
+
+        <string name = "title_no_songs"> Песни не найдены </string>
+        <string name = "info_delete_song"> Вы уверены, что хотите удалить песню? </string>
+        <string name = "info_delete_song_done"> Песня удалена </string>
+
+        <string name = "title_add_playlist"> Добавить плейлист </string>
+        <string name = "title_select_playlist"> Выбрать плейлист </string>
+        <string name = "info_playlist_error"> Имя плейлиста не может быть пустым </string>
+
+        <string name = "info_delete_playlist"> Вы уверены, что хотите удалить этот плейлист? </string>
+
+        <string name = "info_song_already_playlist"> Эта песня уже существует в плейлисте </string>
+
+        <string name = "format_number_musics">%1$s песен </string>
+        <string name = "format_number_music">%1$s song </string>
+
+        <string name = "title_playlist"> Плейлист </string>
+        <string name = "title_playlist_name"> Имя плейлиста </string>
+
+        <string name = "title_settings"> Настройки </string>
+
+        <string name = "title_save"> Сохранить </string>
+        <string name = "title_equalizer"> Эквалайзер </string>
+        <string name = "title_custom"> Пользовательский </string>
+        <string name = "info_rate_me"> Оценить приложение </string>
+
+        <string name = "info_lose_internet"> Проверьте подключение к Интернету. </string>
+        <string name = "info_empty"> Пожалуйста, введите ключевое слово </string>
+        <string name = "info_close_app"> Вы хотите выйти из приложения? </string>
+        <string name = "info_server_error"> Отключено от сервера, повторите попытку позже. </string>
+
+        <string name = "menu_remove_to_playlist"> Удалить из плейлиста </string>
+
+        <string name = "menu_add_to_playlist"> Добавить в плейлист </string>
+        <string name = "menu_delete_song"> Удалить эту песню </string>
+        <string name = "menu_share"> Поделиться </string>
+        <string name = "info_play_song_error"> Ой, у этой песни есть проблемы, попробуйте позже. </string>
+
+        <string name = "format_current_song"> Песня:%1$s </string>
+        <string name = "format_current_singer"> Автор:%1$s </string>
+
+        <string-array name = "list_create_playlist">
+            <item> Создать плейлист </item>
+        </string-array>
+
+        <string name = "info_error_sdcard"> Приложение не может быть запущено, возможно, вам не хватило места, сначала выполните очистку. </string>
+
+        <string name = "info_visit_website"> Политика конфиденциальности </string>
+        <string name = "info_send_email"> Обратная связь </string>
+        <string name = "info_share"> Поделиться </string>
+        <string name = "info_share_app"> Давайте начнем с%1$s сейчас%2$s </string>
+
+        <string name = "title_search_music"> Поиск песен </string>
+        <string name = "title_create"> Создать </string>
+        <string name = "info_add_playlist"> Добавлен%1$s в%2$s </string>
+        <string name = "info_nosong_playlist"> Плейлист пуст </string>
+
+        <string name = "title_play_all"> Воспроизвести все </string>
+        <string name = "title_rename_playlist"> Переименовать список воспроизведения </string>
+        <string name = "title_delete_playlist"> Удалить плейлист </string>
+
+    <string name = "info_permission_denied"> Извините, разрешение отклонено. Мы не можем открыть это приложение на вашем устройстве, повторите попытку позже. </string>
+
+        <string name = "title_bass"> Бас </string>
+        <string name = "title_virtualizer"> Виртуализатор </string>
+        <string name = "title_sleep_mode"> Спящий режим </string>
+        <string name = "title_off"> близко </string>
+
+        <string name = "format_minutes">%1$s минут </string>
+        <string name = "format_minute">%1$s минута </string>
+        <string name = "title_now_playing"> Сейчас играет </string>
+
+        <string name = "title_tab_top_charts"> Тенденции </string>
+        <string name = "title_tab_discover"> Жанр </string>
+        <string name = "title_tab_my_music"> Мои песни </string>
+        <string name = "title_tab_my_playlist"> Плейлист </string>
+
+        <string name = "info_write_setting_permission"> Нам нужно иметь разрешение write_setting для установки мелодии звонка или уведомления. Хотите предоставить его сейчас? </string>
+        <string name = "info_set_ringtone_successfully"> Рингтон установлен. </string>
+        <string name = "info_set_notification_successfully"> Уведомление установлено. </string>
+        <string name = "title_set_as_ringtone"> Установить как мелодию звонка </string>
+        <string name = "title_set_as_noti"> Установить как уведомление </string>
+        <string name = "title_artist"> Исполнитель </string>
+        <string name = "title_song"> Песня </string>
+        <string name = "title_edit_song"> Редактировать песню </string>
+        <string name = "lbl_welcome"> Добро пожаловать! </string>
+        <string name = "lbl_welcome_message"> TTPod Music - это бесплатный онлайн-музыкальный проигрыватель с библиотекой песен из более чем 5 000 000 песен.
+
+\ n \ nЧто вы можете сделать с TTPod Music?
+\ n- Поиск и воспроизведение более 5,000,000 песен
+\ n- Создать плейлист из местных или онлайн песен
+\ n- Настройка таймера для спящего режима
+\ n- Отрегулируйте звуковой эффект с помощью эквалайзера
+\ n- Разные жанры на выбор
+    </string>
+
+        <string name = "lbl_disclaimer"> Отказ от ответственности </string>
+        <string name = "lbl_disclaimer_message"> Мы НЕ являемся владельцами авторских прав ни на одну из песен. Приложение использует открытый API-интерфейс SoundCloud для потоковой передачи музыки. </string>
+
+</resources>
