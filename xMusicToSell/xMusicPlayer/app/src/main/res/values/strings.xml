@@ -128,5 +128,8 @@
     <string name="lbl_disclaimer">Disclaimer</string>
     <string name="lbl_disclaimer_message">We are NOT the Copyright Owners of any of the songs. The app uses \'SoundCloud\' Public API to stream music.</string>
 
+    <string name="having_fun">Found your favorite songs?</string>
+    <string name="ask_rating">Do you like TTPod Music Player so far? Would you like to give us a Rating on Play Store?</string>
+    <string name="not_now">NOT NOW</string>
 
 </resources>

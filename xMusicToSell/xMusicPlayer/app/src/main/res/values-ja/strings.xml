@@ -118,4 +118,9 @@
 
     <string name="lbl_disclaimer">免責事項</string>
     <string name="lbl_disclaimer_message">私たちは、いかなる曲もの著作権所有者ではありません。このアプリは 「SoundCloud」 のパブリックAPIを使って音楽をストリーミングしています。</string>
+
+    <string name = "having_fun">あなたは好きな曲を探していますか？</string>
+    <string name = "ask_rating">これまでのところTTPod Music Playerがお気に入りですか, Playストアで評価をください? </string>
+    <string name = "not_now">今はしていません</string>
+
 </resources>

@@ -160,7 +160,7 @@ public class YPYMainActivity extends YPYFragmentActivity implements IDBMusicPlay
 
         setUpActionBar();
 
-        setIsAllowPressMoreToExit(true);
+        setIsAllowPressMoreToExit(false);
 
         YPYSettingManager.setOnline(this, true);
 

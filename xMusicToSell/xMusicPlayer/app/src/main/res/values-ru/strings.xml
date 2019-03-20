@@ -93,10 +93,10 @@
         <string name = "format_minute">%1$s минута </string>
         <string name = "title_now_playing"> Сейчас играет </string>
 
-        <string name = "title_tab_top_charts"> Тенденции </string>
-        <string name = "title_tab_discover"> Жанр </string>
-        <string name = "title_tab_my_music"> Мои песни </string>
-        <string name = "title_tab_my_playlist"> Плейлист </string>
+        <string name = "title_tab_top_charts">Тенденции</string>
+        <string name = "title_tab_discover">Жанр</string>
+        <string name = "title_tab_my_music">Мои песни</string>
+        <string name = "title_tab_my_playlist">Плейлист</string>
 
         <string name = "info_write_setting_permission"> Нам нужно иметь разрешение write_setting для установки мелодии звонка или уведомления. Хотите предоставить его сейчас? </string>
         <string name = "info_set_ringtone_successfully"> Рингтон установлен. </string>
@@ -120,4 +120,7 @@
         <string name = "lbl_disclaimer"> Отказ от ответственности </string>
         <string name = "lbl_disclaimer_message"> Мы НЕ являемся владельцами авторских прав ни на одну из песен. Приложение использует открытый API-интерфейс SoundCloud для потоковой передачи музыки. </string>
 
+         <string name = "having_fun"> Нашли свои любимые песни? </string>
+         <string name = "ask_rating"> Вам нравится TTPod Music Player до сих пор? Хотите дать нам рейтинг в Play Store? </string>
+         <string name = "not_now">НЕ СЕЙЧАС</string>
 </resources>

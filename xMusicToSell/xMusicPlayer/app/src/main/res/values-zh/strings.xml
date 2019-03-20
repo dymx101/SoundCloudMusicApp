@@ -119,5 +119,8 @@
     <string name="lbl_disclaimer">免责声明</string>
     <string name="lbl_disclaimer_message">我们不是任何歌曲的版权拥有者！本应用所有音乐资源均来自\'SoundCloud\'平台的公共接口。</string>
 
+    <string name="having_fun">找到喜欢的音乐了吗?</string>
+    <string name="ask_rating">如果您喜欢天天动听，可以去应用商店给我们评价吗?</string>
+    <string name="not_now">暂时不要</string>
 
 </resources>
