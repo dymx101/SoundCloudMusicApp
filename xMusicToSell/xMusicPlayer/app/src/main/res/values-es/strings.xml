@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string name = "app_name"> TTPod </string>
+        <string name = "info_copyright"> © PhotoMagic </string>
+
+        <string name = "action_settings"> Ajustes </string>
+        <string name = "info_loading"> Espere … </string>
+        <string name = "title_yes"> Sí </string>
+        <string name = "title_no"> No </string>
+        <string name = "title_ok"> ¡Está bien! </string>
+        <string name = "title_cancel"> Cancelar </string>
+        <string name = "title_info"> Información </string>
+        <string name = "title_options"> Opciones </string>
+        <string name = "title_confirm"> Confirmar </string>
+
+        <string name = "title_unknown"> Desconocido </string>
+        <string name = "title_timer"> Minutero </string>
+        <string name = "title_done"> Listo </string>
+
+        <string name = "info_press_again_to_exit"> Presione el botón Atrás nuevamente para salir de la aplicación </string>
+
+        <string name = "info_playlist_name_existed"> La lista de reproducción ya existe. Por favor, elija un nuevo nombre. </string>
+
+        <string name = "title_no_songs"> No se encontraron canciones </string>
+        <string name = "info_delete_song"> ¿Estás seguro de eliminar la canción? </string>
+        <string name = "info_delete_song_done"> Canción eliminada </string>
+
+        <string name = "title_add_playlist"> Agregar lista de reproducción </string>
+        <string name = "title_select_playlist"> Seleccionar lista de reproducción </string>
+        <string name = "info_playlist_error"> El nombre de la lista de reproducción no puede estar vacío </string>
+
+        <string name = "info_delete_playlist"> ¿Estás seguro de eliminar esta lista de reproducción? </string>
+
+        <string name = "info_song_already_playlist"> Esta canción ya existe en la lista de reproducción </string>
+
+        <string name = "format_number_musics">%1$s canciones </string>
+        <string name = "format_number_music">%1$s canción </string>
+
+        <string name = "title_playlist"> Playlist </string>
+        <string name = "title_playlist_name"> Nombre de la lista de reproducción </string>
+
+        <string name = "title_settings"> Ajustes </string>
+
+        <string name = "title_save"> Guardar </string>
+        <string name = "title_equalizer"> Igualada </string>
+        <string name = "title_custom"> Personalizado </string>
+        <string name = "info_rate_me"> Califica la aplicación </string>
+
+        <string name = "info_lose_internet"> Verifique su conexión a Internet. </string>
+        <string name = "info_empty"> Ingrese la palabra clave </string>
+        <string name = "info_close_app"> ¿Desea salir de la aplicación? </string>
+        <string name = "info_server_error"> Desconectado del servidor, inténtelo de nuevo más tarde. </string>
+
+        <string name = "menu_remove_to_playlist"> Eliminar de la lista de reproducción </string>
+
+        <string name = "menu_add_to_playlist"> Agregar a lista de reproducción </string>
+        <string name = "menu_delete_song"> Eliminar esta canción </string>
+        <string name = "menu_share"> Compartir </string>
+        <string name = "info_play_song_error"> Ops, esta canción tiene algún problema, inténtalo más tarde. </string>
+
+        <string name = "format_current_song"> Canción:%1$s </string>
+        <string name = "format_current_singer"> Autor:%1$s </string>
+
+        <string-array name = "list_create_playlist">
+            <item> Crear lista de reproducción </item>
+        </string-array>
+
+        <string name = "info_error_sdcard"> La aplicación no se puede iniciar, es posible que se quede sin almacenamiento, primero realice una limpieza. </string>
+
+        <string name = "info_visit_website"> Política de privacidad </string>
+        <string name = "info_send_email"> Realimentación </string>
+        <string name = "info_share"> Compartir </string>
+        <string name = "info_share_app"> Comencemos con%1$s ahora%2$s </string>
+
+        <string name = "title_search_music"> Buscar canciones </string>
+        <string name = "title_create"> Crear </string>
+        <string name = "info_add_playlist"> Se agregó%1$s a%2$s </string>
+        <string name = "info_nosong_playlist"> La lista de reproducción está vacía </string>
+
+        <string name = "title_play_all"> Jugar todo </string>
+        <string name = "title_rename_playlist"> Renombrar lista de reproducción </string>
+        <string name = "title_delete_playlist"> Eliminar lista de reproducción </string>
+
+        <string name = "info_permission_denied"> Lo sentimos, permiso denegado. No podemos abrir esta aplicación en su dispositivo, inténtelo más tarde. </string>
+
+        <string name = "title_bass"> Bajo </string>
+        <string name = "title_virtualizer"> Virtualizador </string>
+        <string name = "title_sleep_mode"> Modo de sueño </string>
+        <string name = "title_off"> Cerrar </string>
+
+        <string name = "format_minutes">%1$s minutos </string>
+        <string name = "format_minute">%1$s minuto </string>
+        <string name = "title_now_playing"> Jugando ahora </string>
+
+        <string name = "title_tab_top_charts"> Tendencias </string>
+        <string name = "title_tab_discover"> Género </string>
+        <string name = "title_tab_my_music"> Mis canciones </string>
+        <string name = "title_tab_my_playlist"> Playlist </string>
+
+    <string name = "info_write_setting_permission"> Necesitamos el permiso write_setting para establecer el tono de llamada o la notificación. ¿Desea proporcionarlo ahora? </string>
+        <string name = "info_set_ringtone_successfully"> Se ha establecido el tono de llamada. </string>
+        <string name = "info_set_notification_successfully"> Se ha establecido la notificación. </string>
+        <string name = "title_set_as_ringtone"> Establecer como tono de llamada </string>
+        <string name = "title_set_as_noti"> Establecer como notificación </string>
+        <string name = "title_artist"> Artista </string>
+        <string name = "title_song"> Canción </string>
+        <string name = "title_edit_song"> Editar canción </string>
+        <string name = "lbl_welcome"> ¡Bienvenido! </string>
+        <string name = "lbl_welcome_message"> TTPod Music es un reproductor de música en línea gratuito con una biblioteca de canciones de más de 5,000,000 de canciones.
+
+\ n \ n¿Qué puedes hacer con TTPod Music?
+\ n- Busca y reproduce más de 5,000,000 de canciones.
+\ n- Crear lista de reproducción con canciones locales o en línea
+\ n- Configurar el temporizador para el modo de suspensión
+\ n- Ajustar el efecto de sonido usando el ecualizador
+\ n- Diferentes géneros a elegir
+    </string>
+
+        <string name = "lbl_disclaimer"> Descargo de responsabilidad </string>
+        <string name = "lbl_disclaimer_message"> NO somos los dueños de los derechos de autor de ninguna de las canciones. La aplicación utiliza \'SoundCloud \' Public API para transmitir música. </string>
+
+        <string name = "having_fun"> ¿Encontró sus canciones favoritas? </string>
+        <string name = "ask_rating"> ¿Te gusta TTPod Music Player hasta ahora? ¿Quieres darnos una calificación en Play Store? </string>
+        <string name = "not_now"> NO AHORA </string>
+</resources>
