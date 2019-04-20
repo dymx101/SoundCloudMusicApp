@@ -30,6 +30,7 @@ import com.mihwapp.crazymusic.lyrics.Lyrics;
 import com.mihwapp.crazymusic.model.TrackModel;
 import com.mihwapp.crazymusic.setting.YPYSettingManager;
 import com.mihwapp.crazymusic.utilities.DownloadThread;
+import com.mihwapp.crazymusic.utils.AdsManager;
 import com.mihwapp.crazymusic.view.CircularProgressBar;
 import com.mihwapp.crazymusic.view.MaterialIconView;
 import com.mihwapp.crazymusic.view.SliderView;
@@ -249,6 +250,8 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
             if (currentLyrics.getFlag() == Lyrics.POSITIVE_RESULT) {
                 lyricsContent.setText(Html.fromHtml(currentLyrics.getText()));
                 lyricsStatus.setVisibility(View.GONE);
+
+                AdsManager.Companion.getInstance().showInterstitial();
             } else {
                 lyricsStatus.setText("No Lyrics Found!");
                 lyricsStatus.setVisibility(View.VISIBLE);
@@ -359,9 +362,13 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
         switch (v.getId()) {
             case R.id.btn_next:
                 mContext.startMusicService(ACTION_NEXT);
+
+                AdsManager.Companion.getInstance().showInterstitial();
                 break;
             case R.id.btn_prev:
                 mContext.startMusicService(ACTION_PREVIOUS);
+
+                AdsManager.Companion.getInstance().showInterstitial();
                 break;
             case R.id.fb_play:
                 onActionPlay();
