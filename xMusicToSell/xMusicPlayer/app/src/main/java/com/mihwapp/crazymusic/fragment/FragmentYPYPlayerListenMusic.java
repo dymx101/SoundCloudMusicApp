@@ -189,32 +189,29 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
         updateInformation();
 
 
-        lyricsIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!isLyricsVisisble) {
-                    lyricsIcon.setAlpha(1.0f);
-                    lyricsContainer.setVisibility(View.VISIBLE);
-                    lyricsLoadingIndicator.setVisibility(View.VISIBLE);
-                    lyricsStatus.setText("Searching Lyrics");
-                    lyricsStatus.setVisibility(View.VISIBLE);
-                    coverContainer.setVisibility(View.GONE);
-                    if (currentLyrics == null) {
+        lyricsIcon.setOnClickListener(view -> {
+            if (!isLyricsVisisble) {
+                lyricsIcon.setAlpha(1.0f);
+                lyricsContainer.setVisibility(View.VISIBLE);
+                lyricsLoadingIndicator.setVisibility(View.VISIBLE);
+                lyricsStatus.setText("Searching Lyrics");
+                lyricsStatus.setVisibility(View.VISIBLE);
+                coverContainer.setVisibility(View.GONE);
+                if (currentLyrics == null) {
 
-                        downloadThread = new DownloadThread(FragmentYPYPlayerListenMusic.this, false, getArtist(), getTitle());
-                        downloadThread.start();
-                    } else {
-                        onLyricsDownloaded(currentLyrics);
-                    }
-
+                    downloadThread = new DownloadThread(FragmentYPYPlayerListenMusic.this, false, getArtist(), getTitle());
+                    downloadThread.start();
                 } else {
-                    lyricsIcon.setAlpha(0.5f);
-                    lyricsContent.setText("");
-                    lyricsContainer.setVisibility(View.GONE);
-                    coverContainer.setVisibility(View.VISIBLE);
+                    onLyricsDownloaded(currentLyrics);
                 }
-                isLyricsVisisble = !isLyricsVisisble;
+
+            } else {
+                lyricsIcon.setAlpha(0.5f);
+                lyricsContent.setText("");
+                lyricsContainer.setVisibility(View.GONE);
+                coverContainer.setVisibility(View.VISIBLE);
             }
+            isLyricsVisisble = !isLyricsVisisble;
         });
     }
 
@@ -327,7 +324,11 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
             mListSongs.clear();
             mListSongs=null;
         }
+    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
     }
 
     @Override
@@ -485,7 +486,5 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
             e.printStackTrace();
         }
     }
-
-
 
 }

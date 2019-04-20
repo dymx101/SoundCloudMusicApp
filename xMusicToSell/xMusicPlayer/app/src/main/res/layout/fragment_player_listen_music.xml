@@ -215,7 +215,9 @@
                 android:textSize="@dimen/text_size_subhead"/>
         </RelativeLayout>
 
+
         <RelativeLayout
+            android:id="@+id/cover_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@+id/layout_control"
@@ -229,7 +231,6 @@
                 android:layout_marginBottom="@dimen/dialog_margin">
 
                 <RelativeLayout
-                    android:id="@+id/cover_container"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_above="@+id/layout_actions"
@@ -253,50 +254,6 @@
                         android:layout_marginTop="@dimen/small_margin"
                         android:src="@drawable/logo_soundcloud">
                     </ImageView>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/lyrics_container"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_above="@+id/layout_actions"
-                    android:layout_marginBottom="@dimen/dialog_margin"
-                    android:background="#00000000"
-                    android:clickable="true">
-
-                    <com.wang.avi.AVLoadingIndicatorView
-                        android:id="@+id/lyrics_loading_indicator"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_above="@+id/lyrics_status_text"
-                        android:layout_centerInParent="true"
-                        android:visibility="gone"
-                        app:indicatorName="BallPulseSyncIndicator" />
-
-                    <TextView
-                        android:id="@+id/lyrics_status_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:textColor="#FFFFFF"
-                        android:textSize="16sp"
-                        android:visibility="gone" />
-
-                    <ScrollView
-                        android:id="@+id/lyrics_content_scroll_wrapper"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/lyrics_content"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:padding="10dp"
-                            android:textSize="14sp"
-                            android:textColor="#FFFFFF" />
-
-                    </ScrollView>
-
                 </RelativeLayout>
 
                 <LinearLayout
@@ -376,6 +333,51 @@
                 android:text="@string/format_current_singer"
                 android:textColor="@color/main_color_text"
                 android:textSize="@dimen/text_size_subhead"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lyrics_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/layout_control"
+            android:layout_below="@+id/layout_action_bar_player"
+            android:layout_marginBottom="@dimen/dialog_margin"
+            android:background="#00000000"
+            android:clickable="true">
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/lyrics_loading_indicator"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_above="@+id/lyrics_status_text"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                app:indicatorName="BallPulseSyncIndicator" />
+
+            <TextView
+                android:id="@+id/lyrics_status_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <ScrollView
+                android:id="@+id/lyrics_content_scroll_wrapper"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/lyrics_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF" />
+
+            </ScrollView>
+
         </RelativeLayout>
 
     </RelativeLayout>
