@@ -123,4 +123,7 @@
          <string name = "having_fun"> Нашли свои любимые песни? </string>
          <string name = "ask_rating"> Вам нравится TTPod Music Player до сих пор? Хотите дать нам рейтинг в Play Store? </string>
          <string name = "not_now">НЕ СЕЙЧАС</string>
+
+         <string name = "lbl_lyrics_not_found"> Текст не найден! </string>
+         <string name = "lbl_lyrics_search_manually"> Поиск лирики </string>
 </resources>

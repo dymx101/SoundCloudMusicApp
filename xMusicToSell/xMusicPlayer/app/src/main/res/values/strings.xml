@@ -131,5 +131,11 @@
     <string name="having_fun">Found your favorite songs?</string>
     <string name="ask_rating">Do you like TTPod Music Player so far? Would you like to give us a Rating on Play Store?</string>
     <string name="not_now">NOT NOW</string>
+    <string name="lbl_lyrics_not_found">No Lyrics Found!</string>
+    <string name="lbl_lyrics_search_manually">Search For Lyrics</string>
+    <string name="btn_search_lyrics">Search Lyrics</string>
+    <string name="lbl_song_title">Song Title</string>
+    <string name="lbl_artist_name">Artist Name</string>
+    <string name="lbl_searching_lyrics">Searching Lyrics</string>
 
 </resources>

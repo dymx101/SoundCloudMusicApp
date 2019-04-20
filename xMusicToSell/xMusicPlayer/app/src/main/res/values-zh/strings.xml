@@ -123,4 +123,6 @@
     <string name="ask_rating">如果您喜欢天天动听，可以去应用商店给我们评价吗?</string>
     <string name="not_now">暂时不要</string>
 
+    <string name ="lbl_lyrics_not_found">没有找到歌词！</string>
+    <string name ="lbl_lyrics_search_manually">搜索歌词</string>
 </resources>

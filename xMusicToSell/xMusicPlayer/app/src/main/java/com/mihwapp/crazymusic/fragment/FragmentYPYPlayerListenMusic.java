@@ -10,10 +10,13 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.Priority;
@@ -117,6 +120,18 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
     @BindView(R.id.lyrics_content)
     TextView lyricsContent;
 
+    @BindView(R.id.view_bg)
+    View bgView;
+
+    @BindView(R.id.et_artist)
+    EditText etArtist;
+
+    @BindView(R.id.et_title)
+    EditText etTitle;
+
+    @BindView(R.id.btn_search_lyrics)
+    Button btnSearchLyrics;
+
     public static final int[] RES_ID_CLICKS = {R.id.btn_close,
             R.id.img_share,R.id.btn_next,R.id.btn_prev,R.id.img_add_playlist
             ,R.id.img_equalizer,R.id.img_sleep_mode};
@@ -134,17 +149,45 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
 
     private GlideViewGroupTarget mTarget;
 
+    public Boolean isLyricsVisisble = false;
+    public Lyrics currentLyrics = null;
+    public DownloadThread downloadThread;
+
+    @Override
+    public void onLyricsDownloaded(Lyrics lyrics) {
+        currentLyrics = lyrics;
+        lyricsLoadingIndicator.setVisibility(View.GONE);
+
+        if (currentLyrics.getFlag() == Lyrics.POSITIVE_RESULT) {
+            lyricsContent.setText(Html.fromHtml(currentLyrics.getText()));
+            lyricsStatus.setVisibility(View.GONE);
+
+            etArtist.setVisibility(View.GONE);
+            etTitle.setVisibility(View.GONE);
+            btnSearchLyrics.setVisibility(View.GONE);
+
+            AdsManager.Companion.getInstance().showInterstitial();
+        } else {
+            lyricsStatus.setText(R.string.lbl_lyrics_not_found);
+            lyricsStatus.setVisibility(View.VISIBLE);
+
+            etArtist.setVisibility(View.VISIBLE);
+            etTitle.setVisibility(View.VISIBLE);
+            btnSearchLyrics.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private String getTitle() {
+        return mCurrentTrackObject.getTitle();
+    }
+
+    private String getArtist() {
+        return mCurrentTrackObject.getAuthor();
+    }
+
     @Override
     public View onInflateLayout(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_player_listen_music, container, false);
-        view.setOnTouchListener(new View.OnTouchListener() {
-
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                return true;
-            }
-        });
-        return view;
+        return inflater.inflate(R.layout.fragment_player_listen_music, container, false);
     }
 
     @Override
@@ -199,29 +242,70 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
         updateInformation();
 
         lyricsIcon.setOnClickListener(view -> {
-            if (!isLyricsVisisble) {
-                lyricsIcon.setAlpha(1.0f);
-                lyricsContainer.setVisibility(View.VISIBLE);
-                lyricsLoadingIndicator.setVisibility(View.VISIBLE);
-                lyricsStatus.setText("Searching Lyrics");
-                lyricsStatus.setVisibility(View.VISIBLE);
-                coverContainer.setVisibility(View.GONE);
-                if (currentLyrics == null) {
-
-                    downloadThread = new DownloadThread(FragmentYPYPlayerListenMusic.this, false, getArtist(), getTitle());
-                    downloadThread.start();
-                } else {
-                    onLyricsDownloaded(currentLyrics);
-                }
-
-            } else {
-                lyricsIcon.setAlpha(0.5f);
-                lyricsContent.setText("");
-                lyricsContainer.setVisibility(View.GONE);
-                coverContainer.setVisibility(View.VISIBLE);
-            }
-            isLyricsVisisble = !isLyricsVisisble;
+            showLyrics(!isLyricsVisisble);
         });
+
+        bgView.setOnTouchListener(new View.OnTouchListener() {
+
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                return true;
+            }
+        });
+
+//        etArtist.setText("Michael Jackson");
+//        etTitle.setText("Beat it");
+
+        btnSearchLyrics.setOnClickListener(view -> {
+            String artist = etArtist.getText().toString().trim();
+            String title = etTitle.getText().toString().trim();
+            if (artist == null || artist.isEmpty()) {
+                Toast.makeText(mContext, "Please enter artist name", Toast.LENGTH_SHORT).show();
+            } else if (title == null || title.isEmpty()) {
+                Toast.makeText(mContext, "Please enter song title", Toast.LENGTH_SHORT).show();
+            } else {
+                doSearcLyrics(artist, title);
+            }
+        });
+    }
+
+    private void doSearcLyrics(String artist, String title) {
+
+        if (downloadThread != null) {
+            downloadThread.interrupt();
+        }
+
+        downloadThread = new DownloadThread(FragmentYPYPlayerListenMusic.this, false, artist, title);
+        downloadThread.start();
+
+        lyricsLoadingIndicator.setVisibility(View.VISIBLE);
+        etArtist.setVisibility(View.GONE);
+        etTitle.setVisibility(View.GONE);
+        btnSearchLyrics.setVisibility(View.GONE);
+
+        lyricsStatus.setText(getString(R.string.lbl_searching_lyrics));
+        lyricsStatus.setVisibility(View.VISIBLE);
+    }
+
+    private void showLyrics(Boolean show) {
+        if (show) {
+            lyricsIcon.setAlpha(1.0f);
+            lyricsContainer.setVisibility(View.VISIBLE);
+
+            coverContainer.setVisibility(View.GONE);
+            if (currentLyrics == null) {
+                doSearcLyrics(getArtist(), getTitle());
+            } else {
+                onLyricsDownloaded(currentLyrics);
+            }
+
+        } else {
+            lyricsIcon.setAlpha(0.5f);
+            lyricsContent.setText("");
+            lyricsContainer.setVisibility(View.GONE);
+            coverContainer.setVisibility(View.VISIBLE);
+        }
+        isLyricsVisisble = show;
     }
 
     private void resetLyricsSearch() {
@@ -238,34 +322,6 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
         }
     }
 
-    public Boolean isLyricsVisisble = false;
-    public Lyrics currentLyrics = null;
-    public DownloadThread downloadThread;
-
-    @Override
-    public void onLyricsDownloaded(Lyrics lyrics) {
-        if (lyrics.getTrack().equals(getTitle()) && lyrics.getArtist().equals(getArtist())) {
-            currentLyrics = lyrics;
-            lyricsLoadingIndicator.setVisibility(View.GONE);
-            if (currentLyrics.getFlag() == Lyrics.POSITIVE_RESULT) {
-                lyricsContent.setText(Html.fromHtml(currentLyrics.getText()));
-                lyricsStatus.setVisibility(View.GONE);
-
-                AdsManager.Companion.getInstance().showInterstitial();
-            } else {
-                lyricsStatus.setText("No Lyrics Found!");
-                lyricsStatus.setVisibility(View.VISIBLE);
-            }
-        }
-    }
-
-    private String getTitle() {
-        return mCurrentTrackObject.getTitle();
-    }
-
-    private String getArtist() {
-        return mCurrentTrackObject.getAuthor();
-    }
 
     private void updateTypeShuffle(){
         if(mCbShuffe!=null){

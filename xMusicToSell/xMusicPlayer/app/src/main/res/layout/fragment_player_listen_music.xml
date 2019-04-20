@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:fab="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fitsSystemWindows="true">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <View
+        android:id="@+id/view_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent" />
 
     <RelativeLayout
         android:id="@+id/layout_listen_bg"
@@ -40,7 +46,7 @@
                         android:background="@color/colorAccent"
                         app:max="100"
                         app:min="0"
-                        app:showNumberIndicator="false"/>
+                        app:showNumberIndicator="false" />
 
                     <TextView
                         android:id="@+id/tv_current_time"
@@ -50,7 +56,7 @@
                         android:layout_marginLeft="@dimen/activity_horizontal_margin"
                         android:text="00:00"
                         android:textColor="@color/main_color_text"
-                        android:textSize="@dimen/text_size_body"/>
+                        android:textSize="@dimen/text_size_body" />
 
                     <TextView
                         android:id="@+id/tv_duration"
@@ -61,21 +67,21 @@
                         android:layout_marginRight="@dimen/activity_horizontal_margin"
                         android:text="00:00"
                         android:textColor="@color/main_color_text"
-                        android:textSize="@dimen/text_size_body"/>
+                        android:textSize="@dimen/text_size_body" />
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/dialog_margin"
                     android:paddingTop="@dimen/dialog_margin"
-                >
+                    android:paddingBottom="@dimen/dialog_margin">
+
                     <RelativeLayout
                         android:id="@+id/layout_play"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                    >
+                        android:layout_centerInParent="true">
+
                         <com.github.clans.fab.FloatingActionButton
                             android:id="@+id/fb_play"
                             android:layout_width="wrap_content"
@@ -84,7 +90,7 @@
                             fab:fab_colorNormal="@color/colorAccent"
                             fab:fab_colorPressed="@color/colorAccent"
                             fab:fab_colorRipple="@color/ripple_effect_color"
-                            fab:fab_size="normal"/>
+                            fab:fab_size="normal" />
 
                         <com.mihwapp.crazymusic.view.MaterialIconView
                             android:id="@+id/btn_play"
@@ -95,7 +101,7 @@
                             android:padding="0dp"
                             android:text="@string/icon_play"
                             android:textColor="@color/icon_color"
-                            android:textSize="@dimen/size_img_medium"/>
+                            android:textSize="@dimen/size_img_medium" />
 
                     </RelativeLayout>
 
@@ -106,8 +112,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="@dimen/activity_horizontal_margin"
                         android:layout_toRightOf="@+id/layout_play"
-                        android:src="@drawable/ic_skip_next_white_36dp"
-                    />
+                        android:src="@drawable/ic_skip_next_white_36dp" />
 
                     <ImageView
                         android:id="@+id/btn_prev"
@@ -116,8 +121,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginRight="@dimen/activity_horizontal_margin"
                         android:layout_toLeftOf="@+id/layout_play"
-                        android:src="@drawable/ic_skip_previous_white_36dp"
-                    />
+                        android:src="@drawable/ic_skip_previous_white_36dp" />
 
                     <ImageView
                         android:id="@+id/cb_repeat"
@@ -125,8 +129,7 @@
                         android:layout_height="@dimen/size_img_medium"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="@dimen/size_img_small"
-                        android:src="@drawable/ic_repeat_white_36dp"
-                    />
+                        android:src="@drawable/ic_repeat_white_36dp" />
 
                     <ImageView
                         android:id="@+id/cb_shuffle"
@@ -135,8 +138,7 @@
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:layout_marginRight="@dimen/size_img_small"
-                        android:src="@drawable/ic_shuffle_white_36dp"
-                    />
+                        android:src="@drawable/ic_shuffle_white_36dp" />
 
                 </RelativeLayout>
             </LinearLayout>
@@ -148,7 +150,7 @@
                 android:layout_centerInParent="true"
                 android:visibility="gone"
                 app:cpb_color="@color/progressbar_color"
-                app:cpb_stroke_width="@dimen/stroke_process"/>
+                app:cpb_stroke_width="@dimen/stroke_process" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -164,8 +166,7 @@
                 android:layout_height="@dimen/size_img_medium"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/dialog_margin"
-                android:src="@drawable/ic_arrow_down_white_36dp"
-            />
+                android:src="@drawable/ic_arrow_down_white_36dp" />
 
             <eu.gsottbauer.equalizerview.EqualizerView
                 android:id="@+id/big_equalizer"
@@ -180,8 +181,7 @@
                 app:barWidth="@dimen/small_margin"
                 app:marginLeft="1dp"
                 app:marginRight="1dp"
-                app:runInBatterySaveMode="true"
-            />
+                app:runInBatterySaveMode="true" />
 
             <ImageView
                 android:id="@+id/lyrics_icon"
@@ -190,13 +190,13 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="12dp"
                 android:layout_toStartOf="@+id/big_equalizer"
+                android:alpha="0.5"
                 android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
-                android:alpha="0.5"
                 android:padding="8dp"
                 android:scrollbars="vertical"
-                android:tint="#FFFFFF"
-                android:src="@drawable/lyrics_icon" />
+                android:src="@drawable/lyrics_icon"
+                android:tint="#FFFFFF" />
 
             <TextView
                 android:id="@+id/tv_now_playing"
@@ -208,11 +208,11 @@
                 android:layout_toLeftOf="@+id/big_equalizer"
                 android:layout_toRightOf="@+id/btn_close"
                 android:gravity="center_horizontal"
-                android:textStyle="bold"
                 android:singleLine="true"
                 android:text="@string/title_now_playing"
                 android:textColor="@color/main_color_text"
-                android:textSize="@dimen/text_size_subhead"/>
+                android:textSize="@dimen/text_size_subhead"
+                android:textStyle="bold" />
         </RelativeLayout>
 
 
@@ -242,18 +242,17 @@
                         android:layout_height="@dimen/height_img_track"
                         android:layout_centerInParent="true"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/ic_disk">
-                    </ImageView>
+                        android:src="@drawable/ic_disk"></ImageView>
+
                     <ImageView
                         android:id="@+id/img_sound_cloud"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignRight="@+id/img_track"
                         android:layout_alignTop="@id/img_track"
-                        android:layout_marginRight="@dimen/small_margin"
+                        android:layout_alignRight="@+id/img_track"
                         android:layout_marginTop="@dimen/small_margin"
-                        android:src="@drawable/logo_soundcloud">
-                    </ImageView>
+                        android:layout_marginRight="@dimen/small_margin"
+                        android:src="@drawable/logo_soundcloud"></ImageView>
                 </RelativeLayout>
 
                 <LinearLayout
@@ -269,8 +268,7 @@
                         android:layout_width="@dimen/size_img_medium"
                         android:layout_height="@dimen/size_img_medium"
                         android:layout_gravity="center_vertical"
-                        android:src="@drawable/ic_sleep_mode_white_36dp"
-                    />
+                        android:src="@drawable/ic_sleep_mode_white_36dp" />
 
                     <ImageView
                         android:id="@+id/img_equalizer"
@@ -278,8 +276,7 @@
                         android:layout_height="@dimen/size_img_medium"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="@dimen/size_img_small"
-                        android:src="@drawable/ic_equalizer_white_36dp"
-                    />
+                        android:src="@drawable/ic_equalizer_white_36dp" />
 
                     <ImageView
                         android:id="@+id/img_add_playlist"
@@ -287,8 +284,7 @@
                         android:layout_height="@dimen/size_img_medium"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="@dimen/size_img_small"
-                        android:src="@drawable/ic_add_to_playlist_white_36dp"
-                    />
+                        android:src="@drawable/ic_add_to_playlist_white_36dp" />
 
                     <ImageView
                         android:id="@+id/img_share"
@@ -296,8 +292,7 @@
                         android:layout_height="@dimen/size_img_medium"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="@dimen/size_img_small"
-                        android:src="@drawable/ic_share_white_36dp"
-                    />
+                        android:src="@drawable/ic_share_white_36dp" />
                 </LinearLayout>
 
 
@@ -308,31 +303,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/tv_current_singer"
-                android:layout_marginBottom="@dimen/small_margin"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginBottom="@dimen/small_margin"
                 android:gravity="center_horizontal"
                 android:maxLines="2"
-                android:textStyle="bold"
                 android:text="@string/format_current_song"
                 android:textColor="@color/main_color_text"
-                android:textSize="@dimen/text_size_subhead"/>
+                android:textSize="@dimen/text_size_subhead"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_current_singer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="@dimen/small_margin"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginBottom="@dimen/small_margin"
                 android:ellipsize="marquee"
                 android:gravity="center_horizontal"
                 android:marqueeRepeatLimit="marquee_forever"
                 android:singleLine="true"
                 android:text="@string/format_current_singer"
                 android:textColor="@color/main_color_text"
-                android:textSize="@dimen/text_size_subhead"/>
+                android:textSize="@dimen/text_size_subhead" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -343,8 +338,26 @@
             android:layout_below="@+id/layout_action_bar_player"
             android:layout_marginBottom="@dimen/dialog_margin"
             android:background="#00000000"
-            android:visibility="gone"
-            android:clickable="true">
+            android:clickable="true"
+            android:visibility="gone">
+
+            <ScrollView
+                android:id="@+id/lyrics_content_scroll_wrapper"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/lyrics_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-thin"
+                    android:gravity="center"
+                    android:lineSpacingExtra="12sp"
+                    android:padding="16dp"
+                    android:textColor="@color/almost_white"
+                    android:textSize="16sp" />
+
+            </ScrollView>
 
             <com.wang.avi.AVLoadingIndicatorView
                 android:id="@+id/lyrics_loading_indicator"
@@ -364,23 +377,40 @@
                 android:textSize="16sp"
                 android:visibility="gone" />
 
-            <ScrollView
-                android:id="@+id/lyrics_content_scroll_wrapper"
+            <EditText
+                android:id="@+id/et_artist"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lyrics_status_text"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:hint="@string/lbl_artist_name"
+                android:singleLine="true"
+                android:visibility="gone" />
 
-                <TextView
-                    android:id="@+id/lyrics_content"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-thin"
-                    android:gravity="center"
-                    android:lineSpacingExtra="12sp"
-                    android:padding="16dp"
-                    android:textColor="@color/almost_white"
-                    android:textSize="16sp" />
+            <EditText
+                android:id="@+id/et_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_artist"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:hint="@string/lbl_song_title"
+                android:singleLine="true"
+                android:visibility="gone" />
 
-            </ScrollView>
+            <Button
+                android:id="@+id/btn_search_lyrics"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_below="@+id/et_title"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:text="@string/btn_search_lyrics"
+                android:visibility="gone" />
 
         </RelativeLayout>
 

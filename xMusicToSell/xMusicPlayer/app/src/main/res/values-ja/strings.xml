@@ -123,4 +123,6 @@
     <string name = "ask_rating">これまでのところTTPod Music Playerがお気に入りですか, Playストアで評価をください? </string>
     <string name = "not_now">今はしていません</string>
 
+    <string name = "lbl_lyrics_not_found">歌詞が見つかりません！</string>
+    <string name = "lbl_lyrics_search_manually">歌詞の検索</string>
 </resources>
