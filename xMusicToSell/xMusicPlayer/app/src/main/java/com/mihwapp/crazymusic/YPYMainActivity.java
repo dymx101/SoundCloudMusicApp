@@ -297,7 +297,10 @@ public class YPYMainActivity extends YPYFragmentActivity implements IDBMusicPlay
 
             @Override
             public void onStateChanged(View bottomSheet, int newState) {
-                if (newState == BottomSheetBehavior.STATE_EXPANDED) {
+
+                if (newState == BottomSheetBehavior.STATE_DRAGGING) {
+                    mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                } else if (newState == BottomSheetBehavior.STATE_EXPANDED) {
                     showAppBar(false);
                     showHeaderMusicPlayer(true);
                 }
