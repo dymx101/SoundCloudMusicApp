@@ -25,8 +25,10 @@ import com.mihwapp.crazymusic.constants.IXMusicConstants;
 import com.mihwapp.crazymusic.dataMng.MusicDataMng;
 import com.mihwapp.crazymusic.imageloader.GlideImageLoader;
 import com.mihwapp.crazymusic.imageloader.target.GlideViewGroupTarget;
+import com.mihwapp.crazymusic.lyrics.Lyrics;
 import com.mihwapp.crazymusic.model.TrackModel;
 import com.mihwapp.crazymusic.setting.YPYSettingManager;
+import com.mihwapp.crazymusic.utilities.DownloadThread;
 import com.mihwapp.crazymusic.view.CircularProgressBar;
 import com.mihwapp.crazymusic.view.MaterialIconView;
 import com.mihwapp.crazymusic.view.SliderView;
@@ -43,7 +45,7 @@ import static com.mihwapp.crazymusic.playservice.IYPYMusicConstant.ACTION_PLAY;
 import static com.mihwapp.crazymusic.playservice.IYPYMusicConstant.ACTION_PREVIOUS;
 import static com.mihwapp.crazymusic.playservice.IYPYMusicConstant.ACTION_TOGGLE_PLAYBACK;
 
-public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicConstants,View.OnClickListener {
+public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicConstants,View.OnClickListener, Lyrics.Callback {
 
     public static final String TAG = FragmentYPYPlayerListenMusic.class.getSimpleName();
 
@@ -130,9 +132,6 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
 
     private GlideViewGroupTarget mTarget;
 
-    private Boolean isLyricsVisisble = false;
-
-
     @Override
     public View onInflateLayout(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_player_listen_music, container, false);
@@ -200,13 +199,13 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
                     lyricsStatus.setText("Searching Lyrics");
                     lyricsStatus.setVisibility(View.VISIBLE);
                     coverContainer.setVisibility(View.GONE);
-//                    if (currentLyrics == null) {
-//
-//                        downloadThread = new DownloadThread(PlayerFragment.this, false, getArtist(), getTitle());
-//                        downloadThread.start();
-//                    } else {
-//                        onLyricsDownloaded(currentLyrics);
-//                    }
+                    if (currentLyrics == null) {
+
+                        downloadThread = new DownloadThread(FragmentYPYPlayerListenMusic.this, false, getArtist(), getTitle());
+                        downloadThread.start();
+                    } else {
+                        onLyricsDownloaded(currentLyrics);
+                    }
 
                 } else {
                     lyricsIcon.setAlpha(0.5f);
@@ -218,6 +217,36 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
             }
         });
     }
+
+    public Boolean isLyricsVisisble = false;
+    public Lyrics currentLyrics = null;
+    public DownloadThread downloadThread;
+
+    @Override
+    public void onLyricsDownloaded(Lyrics lyrics) {
+        if (lyrics.getTrack().equals(getTitle()) && lyrics.getArtist().equals(getArtist())) {
+            currentLyrics = lyrics;
+            lyricsLoadingIndicator.setVisibility(View.GONE);
+            if (currentLyrics.getFlag() == Lyrics.POSITIVE_RESULT) {
+                lyricsContent.setText(Html.fromHtml(currentLyrics.getText()));
+                lyricsStatus.setVisibility(View.GONE);
+            } else {
+                lyricsStatus.setText("No Lyrics Found!");
+                lyricsStatus.setVisibility(View.VISIBLE);
+            }
+        }
+    }
+
+    private String getTitle() {
+        return "Beat It";
+//        return selected_track_title.getText().toString()
+    }
+
+    private String getArtist() {
+        return "Michael Jackson";
+//        return selected_track_artist.getText().toString();
+    }
+
     private void updateTypeShuffle(){
         if(mCbShuffe!=null){
             int color =getResources().getColor(YPYSettingManager.getShuffle(mContext) ? R.color.colorAccent : R.color.icon_color);
