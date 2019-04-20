@@ -7,6 +7,7 @@ import android.text.Html;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -134,7 +135,15 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
 
     @Override
     public View onInflateLayout(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_player_listen_music, container, false);
+        View view = inflater.inflate(R.layout.fragment_player_listen_music, container, false);
+        view.setOnTouchListener(new View.OnTouchListener() {
+
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                return true;
+            }
+        });
+        return view;
     }
 
     @Override
@@ -188,7 +197,6 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
 
         updateInformation();
 
-
         lyricsIcon.setOnClickListener(view -> {
             if (!isLyricsVisisble) {
                 lyricsIcon.setAlpha(1.0f);
@@ -215,6 +223,20 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
         });
     }
 
+    private void resetLyricsSearch() {
+        currentLyrics = null;
+        if (downloadThread != null) {
+            downloadThread.interrupt();
+        }
+        if (isLyricsVisisble) {
+            isLyricsVisisble = false;
+            lyricsContent.setText("");
+            lyricsContainer.setVisibility(View.GONE);
+            lyricsIcon.setAlpha(0.5f);
+            coverContainer.setVisibility(View.VISIBLE);
+        }
+    }
+
     public Boolean isLyricsVisisble = false;
     public Lyrics currentLyrics = null;
     public DownloadThread downloadThread;
@@ -235,13 +257,11 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
     }
 
     private String getTitle() {
-        return "Beat It";
-//        return selected_track_title.getText().toString()
+        return mCurrentTrackObject.getTitle();
     }
 
     private String getArtist() {
-        return "Michael Jackson";
-//        return selected_track_artist.getText().toString();
+        return mCurrentTrackObject.getAuthor();
     }
 
     private void updateTypeShuffle(){
@@ -283,6 +303,9 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
 
 
     public void updateInformation() {
+
+        resetLyricsSearch();
+
         final TrackModel mCurrentTrackObject = MusicDataMng.getInstance().getCurrentTrackObject();
         if (mCurrentTrackObject != null) {
             this.mTvSong.setText(String.format(getString(R.string.format_current_song), mCurrentTrackObject.getTitle()));
