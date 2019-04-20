@@ -229,6 +229,7 @@
                 android:layout_marginBottom="@dimen/dialog_margin">
 
                 <RelativeLayout
+                    android:id="@+id/cover_container"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_above="@+id/layout_actions"

@@ -30,6 +30,7 @@ import com.mihwapp.crazymusic.setting.YPYSettingManager;
 import com.mihwapp.crazymusic.view.CircularProgressBar;
 import com.mihwapp.crazymusic.view.MaterialIconView;
 import com.mihwapp.crazymusic.view.SliderView;
+import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.ArrayList;
 
@@ -94,6 +95,24 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
     @BindView(R.id.img_sound_cloud)
     ImageView mIconSoundCloud;
 
+    @BindView(R.id.cover_container)
+    RelativeLayout coverContainer;
+
+    @BindView(R.id.lyrics_icon)
+    ImageView lyricsIcon;
+
+    @BindView(R.id.lyrics_container)
+    RelativeLayout lyricsContainer;
+
+    @BindView(R.id.lyrics_loading_indicator)
+    AVLoadingIndicatorView lyricsLoadingIndicator;
+
+    @BindView(R.id.lyrics_status_text)
+    TextView lyricsStatus;
+
+    @BindView(R.id.lyrics_content)
+    TextView lyricsContent;
+
     public static final int[] RES_ID_CLICKS = {R.id.btn_close,
             R.id.img_share,R.id.btn_next,R.id.btn_prev,R.id.img_add_playlist
             ,R.id.img_equalizer,R.id.img_sleep_mode};
@@ -110,6 +129,8 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
     private long mCurrentId;
 
     private GlideViewGroupTarget mTarget;
+
+    private Boolean isLyricsVisisble = false;
 
 
     @Override
@@ -169,6 +190,33 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
         updateInformation();
 
 
+        lyricsIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!isLyricsVisisble) {
+                    lyricsIcon.setAlpha(1.0f);
+                    lyricsContainer.setVisibility(View.VISIBLE);
+                    lyricsLoadingIndicator.setVisibility(View.VISIBLE);
+                    lyricsStatus.setText("Searching Lyrics");
+                    lyricsStatus.setVisibility(View.VISIBLE);
+                    coverContainer.setVisibility(View.GONE);
+//                    if (currentLyrics == null) {
+//
+//                        downloadThread = new DownloadThread(PlayerFragment.this, false, getArtist(), getTitle());
+//                        downloadThread.start();
+//                    } else {
+//                        onLyricsDownloaded(currentLyrics);
+//                    }
+
+                } else {
+                    lyricsIcon.setAlpha(0.5f);
+                    lyricsContent.setText("");
+                    lyricsContainer.setVisibility(View.GONE);
+                    coverContainer.setVisibility(View.VISIBLE);
+                }
+                isLyricsVisisble = !isLyricsVisisble;
+            }
+        });
     }
     private void updateTypeShuffle(){
         if(mCbShuffe!=null){
