@@ -372,9 +372,12 @@
                     android:id="@+id/lyrics_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:textSize="14sp"
-                    android:textColor="#FFFFFF" />
+                    android:fontFamily="sans-serif-thin"
+                    android:gravity="center"
+                    android:lineSpacingExtra="12sp"
+                    android:padding="16dp"
+                    android:textColor="@color/almost_white"
+                    android:textSize="16sp" />
 
             </ScrollView>
 
