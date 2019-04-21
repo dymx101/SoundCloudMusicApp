@@ -1,5 +1,6 @@
 package com.mihwapp.crazymusic.utils
 
+import android.app.Activity
 import android.content.Context
 import android.os.Handler
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.RelativeLayout
 import com.google.android.gms.ads.*
 import com.mihwapp.crazymusic.R
+import com.mihwapp.crazymusic.ads.UnityAdsManager
 import com.mihwapp.crazymusic.constants.IXMusicConstants
 import com.mihwapp.crazymusic.setting.YPYSettingManager
 import com.mihwapp.crazymusic.task.IYPYCallback
@@ -39,13 +41,15 @@ class AdsManager {
 
     private var context: Context? = null
 
-    fun setup(context: Context) {
+    fun setup(context: Context, activity: Activity, testMode: Boolean) {
 
         if (!adsEnabled()) {
             return
         }
 
         this.context = context
+
+        UnityAdsManager.initialize(activity, testMode)
 
         MobileAds.initialize(context, IXMusicConstants.ADMOB_APP_ID)
 
@@ -123,11 +127,18 @@ class AdsManager {
         return seconds > adShowInterval
     }
 
-    public fun showInterstitial() {
+    public fun showInterstitial(activity: Activity) {
+
         if (!goodTimeToShowAds()) {
             return
         }
 
+        // If unity ads is ready, show it
+        if (UnityAdsManager.showVideoAds(activity)) {
+            return
+        }
+
+        // if admob interstitial is ready, show it
         interstitialAd?.let {
             if (!it.isLoaded) {
                 return

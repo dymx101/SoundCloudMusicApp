@@ -59,7 +59,7 @@ public class YPYSplashActivity extends YPYFragmentActivity {
         YPYSettingManager.setOnline(this, true);
         DBLog.setDebug(DEBUG);
 
-        AdsManager.Companion.getInstance().setup(getApplicationContext());
+        AdsManager.Companion.getInstance().setup(getApplicationContext(), this, false);
     }
     @Override
     protected void onResume() {
@@ -126,7 +126,7 @@ public class YPYSplashActivity extends YPYFragmentActivity {
         startActivity(mIntent);
         finish();
 
-        AdsManager.Companion.getInstance().showInterstitial();
+        AdsManager.Companion.getInstance().showInterstitial(this);
        }
 
 

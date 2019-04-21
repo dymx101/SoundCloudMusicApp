@@ -166,7 +166,7 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
             etTitle.setVisibility(View.GONE);
             btnSearchLyrics.setVisibility(View.GONE);
 
-            AdsManager.Companion.getInstance().showInterstitial();
+            AdsManager.Companion.getInstance().showInterstitial(getActivity());
         } else {
             lyricsStatus.setText(R.string.lbl_lyrics_not_found);
             lyricsStatus.setVisibility(View.VISIBLE);
@@ -419,12 +419,12 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
             case R.id.btn_next:
                 mContext.startMusicService(ACTION_NEXT);
 
-                AdsManager.Companion.getInstance().showInterstitial();
+                AdsManager.Companion.getInstance().showInterstitial(getActivity());
                 break;
             case R.id.btn_prev:
                 mContext.startMusicService(ACTION_PREVIOUS);
 
-                AdsManager.Companion.getInstance().showInterstitial();
+                AdsManager.Companion.getInstance().showInterstitial(getActivity());
                 break;
             case R.id.fb_play:
                 onActionPlay();
