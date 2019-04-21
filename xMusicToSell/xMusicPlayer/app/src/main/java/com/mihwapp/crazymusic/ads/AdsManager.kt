@@ -132,6 +132,7 @@ class AdsManager {
 
         // If unity ads is ready, show it
         if (UnityAdsManager.showVideoAds(activity)) {
+            saveAdShowTime(Date())
             return
         }
 
