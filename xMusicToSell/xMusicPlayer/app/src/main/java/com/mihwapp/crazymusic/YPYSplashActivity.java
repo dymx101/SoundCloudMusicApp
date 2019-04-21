@@ -16,7 +16,7 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.mihwapp.crazymusic.executor.DBExecutorSupplier;
 import com.mihwapp.crazymusic.setting.YPYSettingManager;
-import com.mihwapp.crazymusic.utils.AdsManager;
+import com.mihwapp.crazymusic.ads.AdsManager;
 import com.mihwapp.crazymusic.utils.DBLog;
 import com.mihwapp.crazymusic.utils.IOUtils;
 import com.mihwapp.crazymusic.view.CircularProgressBar;

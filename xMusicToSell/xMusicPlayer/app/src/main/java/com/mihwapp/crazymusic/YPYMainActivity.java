@@ -11,7 +11,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,7 +27,6 @@ import com.google.android.material.tabs.TabLayout;
 import com.mihwapp.crazymusic.abtractclass.fragment.DBFragment;
 import com.mihwapp.crazymusic.abtractclass.fragment.DBFragmentAdapter;
 import com.mihwapp.crazymusic.adapter.SuggestionAdapter;
-import com.mihwapp.crazymusic.ads.UnityAdsManager;
 import com.mihwapp.crazymusic.dataMng.MusicDataMng;
 import com.mihwapp.crazymusic.dataMng.TotalDataManager;
 import com.mihwapp.crazymusic.dataMng.XMLParsingData;
@@ -48,7 +46,7 @@ import com.mihwapp.crazymusic.model.GenreModel;
 import com.mihwapp.crazymusic.model.PlaylistModel;
 import com.mihwapp.crazymusic.model.TrackModel;
 import com.mihwapp.crazymusic.setting.YPYSettingManager;
-import com.mihwapp.crazymusic.utils.AdsManager;
+import com.mihwapp.crazymusic.ads.AdsManager;
 import com.mihwapp.crazymusic.utils.ApplicationUtils;
 import com.mihwapp.crazymusic.utils.DownloadUtils;
 import com.mihwapp.crazymusic.utils.ShareActionUtils;
@@ -64,16 +62,6 @@ import java.util.Locale;
 import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import butterknife.BindView;
-
-import com.unity3d.ads.UnityAds;
-import com.unity3d.services.IUnityServicesListener;
-import com.unity3d.services.UnityServices;
-import com.unity3d.services.monetization.IUnityMonetizationListener;
-import com.unity3d.services.monetization.UnityMonetization;
-import com.unity3d.services.monetization.placementcontent.ads.IShowAdListener;
-import com.unity3d.services.monetization.placementcontent.ads.ShowAdPlacementContent;
-import com.unity3d.services.monetization.placementcontent.core.PlacementContent;
-import com.unity3d.services.monetization.placementcontent.purchasing.PromoAdPlacementContent;
 
 /**
  * @author:dotrungbao

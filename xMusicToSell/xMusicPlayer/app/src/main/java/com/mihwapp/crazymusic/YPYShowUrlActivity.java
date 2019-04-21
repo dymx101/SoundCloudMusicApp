@@ -11,8 +11,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
-import com.mihwapp.crazymusic.utils.AdsManager;
-import com.mihwapp.crazymusic.utils.ApplicationUtils;
+import com.mihwapp.crazymusic.ads.AdsManager;
 import com.mihwapp.crazymusic.utils.DBLog;
 import com.mihwapp.crazymusic.utils.StringUtils;
 

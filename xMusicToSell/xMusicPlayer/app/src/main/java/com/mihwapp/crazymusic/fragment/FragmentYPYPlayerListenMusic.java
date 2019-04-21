@@ -33,7 +33,7 @@ import com.mihwapp.crazymusic.lyrics.Lyrics;
 import com.mihwapp.crazymusic.model.TrackModel;
 import com.mihwapp.crazymusic.setting.YPYSettingManager;
 import com.mihwapp.crazymusic.utilities.DownloadThread;
-import com.mihwapp.crazymusic.utils.AdsManager;
+import com.mihwapp.crazymusic.ads.AdsManager;
 import com.mihwapp.crazymusic.view.CircularProgressBar;
 import com.mihwapp.crazymusic.view.MaterialIconView;
 import com.mihwapp.crazymusic.view.SliderView;

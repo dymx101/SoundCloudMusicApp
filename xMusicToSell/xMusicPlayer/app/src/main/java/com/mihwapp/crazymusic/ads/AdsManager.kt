@@ -1,17 +1,14 @@
-package com.mihwapp.crazymusic.utils
+package com.mihwapp.crazymusic.ads
 
 import android.app.Activity
 import android.content.Context
 import android.os.Handler
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RelativeLayout
 import com.google.android.gms.ads.*
-import com.mihwapp.crazymusic.R
-import com.mihwapp.crazymusic.ads.UnityAdsManager
 import com.mihwapp.crazymusic.constants.IXMusicConstants
 import com.mihwapp.crazymusic.setting.YPYSettingManager
-import com.mihwapp.crazymusic.task.IYPYCallback
+import com.mihwapp.crazymusic.utils.DBLog
 import java.util.*
 import java.util.concurrent.TimeUnit
 
