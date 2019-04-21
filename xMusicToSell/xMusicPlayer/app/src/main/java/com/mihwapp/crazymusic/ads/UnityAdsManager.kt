@@ -1,7 +1,6 @@
 package com.mihwapp.crazymusic.ads
 
 import android.app.Activity
-import android.content.Context
 import android.util.Log
 import com.unity3d.ads.UnityAds
 import com.unity3d.services.UnityServices
@@ -11,6 +10,15 @@ import com.unity3d.services.monetization.placementcontent.ads.IShowAdListener
 import com.unity3d.services.monetization.placementcontent.ads.ShowAdPlacementContent
 import com.unity3d.services.monetization.placementcontent.core.PlacementContent
 import com.unity3d.services.monetization.placementcontent.purchasing.PromoAdPlacementContent
+
+/**
+ * Document On How to integrate Unity Ads:
+ * https://unityads.unity3d.com/help/android/integration-guide-android
+ * NOTE:
+ * 1. video ad has been implemented
+ * 2. rewarded video ads has been implemented
+ * 3. banner ads has not been implemented
+ */
 
 object UnityAdsManager: IUnityMonetizationListener {
 
@@ -35,7 +43,7 @@ object UnityAdsManager: IUnityMonetizationListener {
             PLACEMENT_ID_VIDEO_REWARDED -> if (placementContent is ShowAdPlacementContent) {
                 if (placementContent.isRewarded) {
                     // Rewarded content is ready, prepare content for display and implement reward handlers
-                    // show reward video
+                    // TODO: update ui...e.g. light up the reward button
                 }
             }
         }
@@ -51,12 +59,21 @@ object UnityAdsManager: IUnityMonetizationListener {
         UnityMonetization.initialize(activity, GAME_ID, this, testMode)
     }
 
-    fun showVideoAds(activity: Activity): Boolean {
+    fun showRewardVideoAds(activity: Activity, rewardCompletion: ()-> Unit): Boolean {
+        return showContentWithId(PLACEMENT_ID_VIDEO_REWARDED, activity, rewardCompletion)
+    }
 
-        val isReady = UnityMonetization.isReady(PLACEMENT_ID_VIDEO);
+    fun showVideoAds(activity: Activity): Boolean {
+        return showContentWithId(PLACEMENT_ID_VIDEO, activity) {}
+    }
+
+    private fun showContentWithId(placementId: String, activity: Activity, rewardCompletion: ()-> Unit): Boolean {
+
+        val isReady = UnityMonetization.isReady(placementId)
+
         if (isReady) {
 
-            val pc = UnityMonetization.getPlacementContent(PLACEMENT_ID_VIDEO)
+            val pc = UnityMonetization.getPlacementContent(placementId)
 
             if (pc.type.equals(PLACEMENT_CONTENT_SHOW_AD, ignoreCase = true)) {
 
@@ -66,7 +83,8 @@ object UnityAdsManager: IUnityMonetizationListener {
 
                         if (finishState == UnityAds.FinishState.COMPLETED) {
                             if (s == PLACEMENT_ID_VIDEO_REWARDED) {
-                                // Reward the player here.
+                                // TODO: add completion handler to reward the user
+                                rewardCompletion()
                             }
                         } else if (finishState == UnityAds.FinishState.SKIPPED) {
                             // Optionally implement skipped logic
