@@ -19,8 +19,8 @@ android {
         applicationId "com.mihwapp.crazymusic"
         minSdkVersion 21
         targetSdkVersion 26
-        versionCode 9
-        versionName "1.1.1"
+        versionCode 10
+        versionName "1.1.2"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
 
