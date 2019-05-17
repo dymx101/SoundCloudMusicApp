@@ -16,6 +16,9 @@ import com.vungle.warren.Vungle
 import java.util.*
 import java.util.concurrent.TimeUnit
 import com.vungle.warren.PlayAdCallback
+import com.vungle.warren.error.VungleException
+
+
 
 
 
@@ -62,21 +65,27 @@ class AdsManager {
 
         initInterstitial()
 
-        Vungle.init(IXMusicConstants.VUNGLE_APP_ID, context, object: InitCallback {
-            override fun onSuccess() {
-                Log.d(TAG, "Vungle Init success")
-                loadVungleAd()
-            }
+        initializeVungleSDK(context)
+    }
 
-            override fun onAutoCacheAdAvailable(p0: String?) {
-                Log.d(TAG, "Vungle Init Auto cache available")
-            }
+    private fun initializeVungleSDK(context: Context?) {
+        context?.let {
+            Vungle.init(IXMusicConstants.VUNGLE_APP_ID, context, object: InitCallback {
+                override fun onSuccess() {
+                    Log.d(TAG, "Vungle Init success")
+                    loadVungleAd()
+                }
 
-            override fun onError(p0: Throwable?) {
-                Log.d(TAG, "Vungle Init error")
-            }
+                override fun onAutoCacheAdAvailable(p0: String?) {
+                    Log.d(TAG, "Vungle Init Auto cache available")
+                }
 
-        })
+                override fun onError(p0: Throwable?) {
+                    Log.d(TAG, "Vungle Init error")
+                }
+
+            })
+        }
     }
 
     private fun loadVungleAd() {
@@ -108,7 +117,16 @@ class AdsManager {
 
                 override fun onError(placementReferenceId: String, throwable: Throwable) {
                     Log.d(TAG, "Vungle ad play error")
-                    loadVungleAd()
+
+                    try {
+                        val ex = throwable as VungleException
+
+                        if (ex.exceptionCode == VungleException.VUNGLE_NOT_INTIALIZED) {
+                            initializeVungleSDK(context)
+                        }
+                    } catch (cex: ClassCastException) {
+                        Log.d(TAG, cex.message)
+                    }
                 }
             })
         }
