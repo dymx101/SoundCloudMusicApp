@@ -3,19 +3,27 @@ package com.mihwapp.crazymusic.ads
 import android.app.Activity
 import android.content.Context
 import android.os.Handler
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import com.google.android.gms.ads.*
 import com.mihwapp.crazymusic.constants.IXMusicConstants
 import com.mihwapp.crazymusic.setting.YPYSettingManager
 import com.mihwapp.crazymusic.utils.DBLog
+import com.vungle.warren.InitCallback
+import com.vungle.warren.LoadAdCallback
+import com.vungle.warren.Vungle
 import java.util.*
 import java.util.concurrent.TimeUnit
+import com.vungle.warren.PlayAdCallback
+
+
 
 class AdsManager {
 
     companion object {
         private const val TAG = "AdsManager"
+        private const val VUNGLE_INTESTITIAL_PLACEMENT_ID = "DEFAULT-4169153"
         private const val adShowInterval = 300
 
         fun getInstance(): AdsManager {
@@ -53,6 +61,58 @@ class AdsManager {
         initBanner()
 
         initInterstitial()
+
+        Vungle.init(IXMusicConstants.VUNGLE_APP_ID, context, object: InitCallback {
+            override fun onSuccess() {
+                Log.d(TAG, "Vungle Init success")
+                loadVungleAd()
+            }
+
+            override fun onAutoCacheAdAvailable(p0: String?) {
+                Log.d(TAG, "Vungle Init Auto cache available")
+            }
+
+            override fun onError(p0: Throwable?) {
+                Log.d(TAG, "Vungle Init error")
+            }
+
+        })
+    }
+
+    private fun loadVungleAd() {
+        if (Vungle.isInitialized()) {
+            Vungle.loadAd(VUNGLE_INTESTITIAL_PLACEMENT_ID, object: LoadAdCallback {
+                override fun onAdLoad(p0: String?) {
+                    Log.d(TAG, "Vungle ad load success")
+                }
+
+                override fun onError(p0: String?, p1: Throwable?) {
+                    Log.d(TAG, "Vungle ad load error")
+                }
+            })
+        }
+    }
+
+    private fun playVungleAd(): Boolean {
+        val canPlay = Vungle.canPlayAd(VUNGLE_INTESTITIAL_PLACEMENT_ID)
+        if (canPlay) {
+            Vungle.playAd(VUNGLE_INTESTITIAL_PLACEMENT_ID, null, object : PlayAdCallback {
+                override fun onAdStart(placementReferenceId: String) {
+                    Log.d(TAG, "Vungle ad play start")
+                }
+
+                override fun onAdEnd(placementReferenceId: String, completed: Boolean, isCTAClicked: Boolean) {
+                    Log.d(TAG, "Vungle ad play end")
+                    loadVungleAd()
+                }
+
+                override fun onError(placementReferenceId: String, throwable: Throwable) {
+                    Log.d(TAG, "Vungle ad play error")
+                    loadVungleAd()
+                }
+            })
+        }
+        return canPlay
     }
 
     private fun initBanner() {
@@ -127,6 +187,12 @@ class AdsManager {
     public fun showInterstitial(activity: Activity) {
 
         if (!goodTimeToShowAds()) {
+            return
+        }
+
+        // If Vungle ads is ready, show it
+        if (playVungleAd()) {
+            saveAdShowTime(Date())
             return
         }
 

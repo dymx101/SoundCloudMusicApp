@@ -24,6 +24,7 @@ public interface IXMusicConstants {
 	public static final String ADMOB_BANNER_ID = "ca-app-pub-7635376757557763/4685608796";
 	public static final String ADMOB_INTERSTITIAL_ID = "ca-app-pub-7635376757557763/4600357626";
 	public static final String ADMOB_APP_ID = "ca-app-pub-7635376757557763~3861991027";
+	public static final String VUNGLE_APP_ID = "5cddff3fbddfba0011982c9a";
 	public static final String DIR_CACHE = "crazy_music_app";
 
 	public static final boolean SHOW_SOUND_CLOUD_TAB = true; //enable sound cloud tab
