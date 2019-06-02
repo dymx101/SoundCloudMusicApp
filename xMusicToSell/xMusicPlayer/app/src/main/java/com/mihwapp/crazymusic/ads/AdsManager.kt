@@ -10,12 +10,9 @@ import com.google.android.gms.ads.*
 import com.mihwapp.crazymusic.constants.IXMusicConstants
 import com.mihwapp.crazymusic.setting.YPYSettingManager
 import com.mihwapp.crazymusic.utils.DBLog
-import com.vungle.warren.InitCallback
-import com.vungle.warren.LoadAdCallback
-import com.vungle.warren.Vungle
+import com.vungle.warren.*
 import java.util.*
 import java.util.concurrent.TimeUnit
-import com.vungle.warren.PlayAdCallback
 import com.vungle.warren.error.VungleException
 
 
@@ -105,6 +102,9 @@ class AdsManager {
     private fun playVungleAd(): Boolean {
         val canPlay = Vungle.canPlayAd(VUNGLE_INTESTITIAL_PLACEMENT_ID)
         if (canPlay) {
+            val adConfig = AdConfig()
+            adConfig.setAutoRotate(false)
+            adConfig.setMuted(true)
             Vungle.playAd(VUNGLE_INTESTITIAL_PLACEMENT_ID, null, object : PlayAdCallback {
                 override fun onAdStart(placementReferenceId: String) {
                     Log.d(TAG, "Vungle ad play start")
