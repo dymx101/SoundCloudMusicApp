@@ -41,10 +41,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.Priority;
 import com.bumptech.glide.request.RequestOptions;
+import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog;
+import com.github.javiersantos.materialstyleddialogs.enums.Style;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
@@ -82,6 +85,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatTextView;
@@ -314,7 +318,7 @@ public class YPYFragmentActivity extends AppCompatActivity implements IXMusicCon
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            if (!isAllowPressMoreToExit) {
+            if (!isAllowPressMoreToExit && !YPYSettingManager.getRateApp(this)) {
                 showQuitDialog();
             }
             else {
@@ -391,17 +395,25 @@ public class YPYFragmentActivity extends AppCompatActivity implements IXMusicCon
     }
 
     public void showQuitDialog() {
-        int mNoId = R.string.title_no;
-        int mTitleId = R.string.title_confirm;
-        int mYesId = R.string.title_yes;
-        int iconId = R.mipmap.ic_launcher;
-        int messageId = R.string.info_close_app;
 
-        createFullDialog(iconId, mTitleId, mYesId, mNoId, getString(messageId), () -> {
-            onDestroyData();
-            finish();
-        }, null).show();
-
+        new MaterialStyledDialog.Builder(this)
+                .setStyle(Style.HEADER_WITH_ICON)
+                .setTitle(R.string.having_fun)
+                .setDescription(getString(R.string.ask_rating))
+                .setIcon(ContextCompat.getDrawable(this, R.mipmap.ic_launcher))
+                .setPositiveText(getString(R.string.title_ok))
+                .onPositive((dialog, which) -> {
+                    YPYSettingManager.setRateApp(YPYFragmentActivity.this, true);
+                    ShareActionUtils.goToUrl(YPYFragmentActivity.this, String.format(URL_FORMAT_LINK_APP, getPackageName()));
+                })
+                .setNegativeText(R.string.not_now)
+                .onNegative((dialog, which) -> {
+                    dialog.cancel();
+                    finish();
+                    System.exit(0);
+                })
+                .setCancelable(true)
+                .show();
     }
 
     private void createProgressDialog() {

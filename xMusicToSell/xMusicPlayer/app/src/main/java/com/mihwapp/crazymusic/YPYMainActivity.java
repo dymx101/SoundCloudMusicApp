@@ -46,7 +46,7 @@ import com.mihwapp.crazymusic.model.GenreModel;
 import com.mihwapp.crazymusic.model.PlaylistModel;
 import com.mihwapp.crazymusic.model.TrackModel;
 import com.mihwapp.crazymusic.setting.YPYSettingManager;
-import com.mihwapp.crazymusic.utils.AdsManager;
+import com.mihwapp.crazymusic.ads.AdsManager;
 import com.mihwapp.crazymusic.utils.ApplicationUtils;
 import com.mihwapp.crazymusic.utils.DownloadUtils;
 import com.mihwapp.crazymusic.utils.ShareActionUtils;
@@ -160,7 +160,7 @@ public class YPYMainActivity extends YPYFragmentActivity implements IDBMusicPlay
 
         setUpActionBar();
 
-        setIsAllowPressMoreToExit(true);
+        setIsAllowPressMoreToExit(false);
 
         YPYSettingManager.setOnline(this, true);
 
@@ -297,7 +297,10 @@ public class YPYMainActivity extends YPYFragmentActivity implements IDBMusicPlay
 
             @Override
             public void onStateChanged(View bottomSheet, int newState) {
-                if (newState == BottomSheetBehavior.STATE_EXPANDED) {
+
+                if (newState == BottomSheetBehavior.STATE_DRAGGING) {
+                    mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                } else if (newState == BottomSheetBehavior.STATE_EXPANDED) {
                     showAppBar(false);
                     showHeaderMusicPlayer(true);
                 }
@@ -402,7 +405,7 @@ public class YPYMainActivity extends YPYFragmentActivity implements IDBMusicPlay
                 mViewpager.setCurrentItem(tab.getPosition());
                 ((DBFragment) mListHomeFragments.get(tab.getPosition())).startLoadData();
 
-                AdsManager.Companion.getInstance().showInterstitial();
+                AdsManager.Companion.getInstance().showInterstitial(YPYMainActivity.this);
             }
 
             @Override

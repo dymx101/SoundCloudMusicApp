@@ -13,82 +13,45 @@
     <string name="title_info">Information</string>
     <string name="title_options">Options</string>
     <string name="title_confirm">Confirm</string>
-    <string name="title_warning">Warning</string>
-    <string name="title_share">Share</string>
-    <string name="title_back">Back</string>
+
     <string name="title_unknown">Unknown</string>
     <string name="title_timer">Timer</string>
-    <string name="title_about_us">About Us</string>
     <string name="title_done">Done</string>
 
-    <string name="format_song_selected">%1$s songs selected</string>
     <string name="info_press_again_to_exit">Press Back button again to quit app</string>
 
-    <string name="info_add_favorite_done">Add to favorite list successfully</string>
-    <string name="info_remove_favorite_done">Remove from favorite list successfully</string>
     <string name="info_playlist_name_existed">The playlist already exists. Please choose a new name.</string>
 
-    <string name="title_recommended">Recommended songs</string>
-    <string name="title_favorite">Favorite List</string>
-
-    <string name="title_pause_all">Pause All</string>
-    <string name="title_resume_all">Resume All</string>
     <string name="title_no_songs">No Songs found</string>
-    <string name="title_enter_keyword">Please enter keyword to search</string>
     <string name="info_delete_song">Are you sure to remove the song?</string>
     <string name="info_delete_song_done">Song Deleted</string>
 
-    <string name="title_categories">Categories</string>
-    <string name="info_select_country">Select Country</string>
     <string name="title_add_playlist">Add Playlist</string>
-    <string name="title_add_track">Add Songs</string>
-    <string name="title_default_playlist">Favorite</string>
     <string name="title_select_playlist">Select Playlist</string>
     <string name="info_playlist_error">Playlist name can not be empty</string>
 
     <string name="info_delete_playlist">Are you sure to remove this playlist?</string>
-    <string name="info_already_favorite">This song already exists in the favorite list</string>
 
     <string name="info_song_already_playlist">This song already exists in the playlist</string>
-    <string name="info_add_track_playlist">Song Added</string>
-    <string name="info_no_song_play">The playlist is empty, please add songs first.</string>
-    <string name="info_save_all_done">Playlist saved</string>
 
     <string name="format_number_musics">%1$s songs</string>
     <string name="format_number_music">%1$s song</string>
-    <string name="format_now_playing">Now Playing: %1$s/%2$s</string>
 
-    <string name="title_songs">Songs</string>
     <string name="title_playlist">Playlist</string>
-    <string name="title_hot_playlist">Top playlist</string>
     <string name="title_playlist_name">Playlist Name</string>
 
     <string name="title_settings">Settings</string>
-    <string name="title_select_song">Select Song</string>
 
     <string name="title_save">Save</string>
     <string name="title_equalizer">Equalizer</string>
     <string name="title_custom">Custom</string>
-    <string name="title_library">My Songs</string>
     <string name="info_rate_me">Rate the app</string>
-
-    <string name="info_content_share">%1$s is an awesome music player app, check it out today!</string>
-    <string name="title_plays">Plays</string>
-    <string name="title_playing">Playing</string>
-    <string name="format_created">Created: %1$s</string>
-    <string name="title_tag">Tags</string>
-    <string name="info_loading_more">Loading More...</string>
-
-    <string name="info_delete_sound">Do you want to delete this song?</string>
-    <string name="info_version_format">v%1$s</string>
 
     <string name="info_lose_internet">Please check your internet connection.</string>
     <string name="info_empty">Please enter the keyword</string>
     <string name="info_close_app">Do you want to quit the app?</string>
     <string name="info_server_error">Disconnected from server, please try again later.</string>
 
-    <string name="menu_add_to_favorite">Add To Favorites</string>
-    <string name="menu_remove_to_favorite">Remove From Favorites</string>
     <string name="menu_remove_to_playlist">Remove From Playlist</string>
 
     <string name="menu_add_to_playlist">Add To Playlist</string>
@@ -112,12 +75,12 @@
     <string name="icon_pause" translatable="false">&#xea64;</string>
 
     <string name="info_error_sdcard">The app can not be launched, you might ran out of storage, do some clean up first.</string>
-    <string name="format_app_name">%1$s v%2$s</string>
+
     <string name="info_visit_website">Privacy Policy</string>
     <string name="info_send_email">Feedback</string>
     <string name="info_share">Share</string>
-    <string name="info_share_app">Let start with %1$s now %2$s</string>
-    <string name="title_refresh">Refresh</string>
+    <string name="info_share_app">Let us start with %1$s now %2$s</string>
+
     <string name="title_search_music">Search for songs</string>
     <string name="title_create">Create</string>
     <string name="info_add_playlist">Added %1$s to %2$s</string>
@@ -128,11 +91,9 @@
     <string name="title_delete_playlist">Delete playlist</string>
 
     <string name="info_permission_denied">Sorry permission denied.We can not open this app on your device, please try again later.</string>
-    <string name="format_request_permision">%1$s will need to have read/write permission your sdcard to save favorite, playlist data etc...Do you want to grant it for our apps now?</string>
 
     <string name="title_bass">Bass</string>
     <string name="title_virtualizer">Virtualizer</string>
-    <string name="title_reverb">Reverb</string>
     <string name="title_sleep_mode">Sleep Mode</string>
     <string name="title_off">OFF</string>
 
@@ -167,5 +128,14 @@
     <string name="lbl_disclaimer">Disclaimer</string>
     <string name="lbl_disclaimer_message">We are NOT the Copyright Owners of any of the songs. The app uses \'SoundCloud\' Public API to stream music.</string>
 
+    <string name="having_fun">Found your favorite songs?</string>
+    <string name="ask_rating">Do you like TTPod Music Player so far? Would you like to give us a Rating on Play Store?</string>
+    <string name="not_now">NOT NOW</string>
+    <string name="lbl_lyrics_not_found">No Lyrics Found!</string>
+    <string name="lbl_lyrics_search_manually">Search For Lyrics</string>
+    <string name="btn_search_lyrics">Search Lyrics</string>
+    <string name="lbl_song_title">Song Title</string>
+    <string name="lbl_artist_name">Artist Name</string>
+    <string name="lbl_searching_lyrics">Searching Lyrics</string>
 
 </resources>

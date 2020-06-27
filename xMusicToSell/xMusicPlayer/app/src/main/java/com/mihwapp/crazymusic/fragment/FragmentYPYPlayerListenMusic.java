@@ -7,12 +7,16 @@ import android.text.Html;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.Priority;
@@ -25,11 +29,15 @@ import com.mihwapp.crazymusic.constants.IXMusicConstants;
 import com.mihwapp.crazymusic.dataMng.MusicDataMng;
 import com.mihwapp.crazymusic.imageloader.GlideImageLoader;
 import com.mihwapp.crazymusic.imageloader.target.GlideViewGroupTarget;
+import com.mihwapp.crazymusic.lyrics.Lyrics;
 import com.mihwapp.crazymusic.model.TrackModel;
 import com.mihwapp.crazymusic.setting.YPYSettingManager;
+import com.mihwapp.crazymusic.utilities.DownloadThread;
+import com.mihwapp.crazymusic.ads.AdsManager;
 import com.mihwapp.crazymusic.view.CircularProgressBar;
 import com.mihwapp.crazymusic.view.MaterialIconView;
 import com.mihwapp.crazymusic.view.SliderView;
+import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.ArrayList;
 
@@ -42,7 +50,7 @@ import static com.mihwapp.crazymusic.playservice.IYPYMusicConstant.ACTION_PLAY;
 import static com.mihwapp.crazymusic.playservice.IYPYMusicConstant.ACTION_PREVIOUS;
 import static com.mihwapp.crazymusic.playservice.IYPYMusicConstant.ACTION_TOGGLE_PLAYBACK;
 
-public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicConstants,View.OnClickListener {
+public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicConstants,View.OnClickListener, Lyrics.Callback {
 
     public static final String TAG = FragmentYPYPlayerListenMusic.class.getSimpleName();
 
@@ -94,6 +102,36 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
     @BindView(R.id.img_sound_cloud)
     ImageView mIconSoundCloud;
 
+    @BindView(R.id.cover_container)
+    RelativeLayout coverContainer;
+
+    @BindView(R.id.lyrics_icon)
+    ImageView lyricsIcon;
+
+    @BindView(R.id.lyrics_container)
+    RelativeLayout lyricsContainer;
+
+    @BindView(R.id.lyrics_loading_indicator)
+    AVLoadingIndicatorView lyricsLoadingIndicator;
+
+    @BindView(R.id.lyrics_status_text)
+    TextView lyricsStatus;
+
+    @BindView(R.id.lyrics_content)
+    TextView lyricsContent;
+
+    @BindView(R.id.view_bg)
+    View bgView;
+
+    @BindView(R.id.et_artist)
+    EditText etArtist;
+
+    @BindView(R.id.et_title)
+    EditText etTitle;
+
+    @BindView(R.id.btn_search_lyrics)
+    Button btnSearchLyrics;
+
     public static final int[] RES_ID_CLICKS = {R.id.btn_close,
             R.id.img_share,R.id.btn_next,R.id.btn_prev,R.id.img_add_playlist
             ,R.id.img_equalizer,R.id.img_sleep_mode};
@@ -111,6 +149,41 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
 
     private GlideViewGroupTarget mTarget;
 
+    public Boolean isLyricsVisisble = false;
+    public Lyrics currentLyrics = null;
+    public DownloadThread downloadThread;
+
+    @Override
+    public void onLyricsDownloaded(Lyrics lyrics) {
+        currentLyrics = lyrics;
+        lyricsLoadingIndicator.setVisibility(View.GONE);
+
+        if (currentLyrics.getFlag() == Lyrics.POSITIVE_RESULT) {
+            lyricsContent.setText(Html.fromHtml(currentLyrics.getText()));
+            lyricsStatus.setVisibility(View.GONE);
+
+            etArtist.setVisibility(View.GONE);
+            etTitle.setVisibility(View.GONE);
+            btnSearchLyrics.setVisibility(View.GONE);
+
+            AdsManager.Companion.getInstance().showInterstitial(getActivity());
+        } else {
+            lyricsStatus.setText(R.string.lbl_lyrics_not_found);
+            lyricsStatus.setVisibility(View.VISIBLE);
+
+            etArtist.setVisibility(View.VISIBLE);
+            etTitle.setVisibility(View.VISIBLE);
+            btnSearchLyrics.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private String getTitle() {
+        return mCurrentTrackObject.getTitle();
+    }
+
+    private String getArtist() {
+        return mCurrentTrackObject.getAuthor();
+    }
 
     @Override
     public View onInflateLayout(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -168,8 +241,88 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
 
         updateInformation();
 
+        lyricsIcon.setOnClickListener(view -> {
+            showLyrics(!isLyricsVisisble);
+        });
 
+        bgView.setOnTouchListener(new View.OnTouchListener() {
+
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                return true;
+            }
+        });
+
+//        etArtist.setText("Michael Jackson");
+//        etTitle.setText("Beat it");
+
+        btnSearchLyrics.setOnClickListener(view -> {
+            String artist = etArtist.getText().toString().trim();
+            String title = etTitle.getText().toString().trim();
+            if (artist == null || artist.isEmpty()) {
+                Toast.makeText(mContext, "Please enter artist name", Toast.LENGTH_SHORT).show();
+            } else if (title == null || title.isEmpty()) {
+                Toast.makeText(mContext, "Please enter song title", Toast.LENGTH_SHORT).show();
+            } else {
+                doSearcLyrics(artist, title);
+            }
+        });
     }
+
+    private void doSearcLyrics(String artist, String title) {
+
+        if (downloadThread != null) {
+            downloadThread.interrupt();
+        }
+
+        downloadThread = new DownloadThread(FragmentYPYPlayerListenMusic.this, false, artist, title);
+        downloadThread.start();
+
+        lyricsLoadingIndicator.setVisibility(View.VISIBLE);
+        etArtist.setVisibility(View.GONE);
+        etTitle.setVisibility(View.GONE);
+        btnSearchLyrics.setVisibility(View.GONE);
+
+        lyricsStatus.setText(getString(R.string.lbl_searching_lyrics));
+        lyricsStatus.setVisibility(View.VISIBLE);
+    }
+
+    private void showLyrics(Boolean show) {
+        if (show) {
+            lyricsIcon.setAlpha(1.0f);
+            lyricsContainer.setVisibility(View.VISIBLE);
+
+            coverContainer.setVisibility(View.GONE);
+            if (currentLyrics == null) {
+                doSearcLyrics(getArtist(), getTitle());
+            } else {
+                onLyricsDownloaded(currentLyrics);
+            }
+
+        } else {
+            lyricsIcon.setAlpha(0.5f);
+            lyricsContent.setText("");
+            lyricsContainer.setVisibility(View.GONE);
+            coverContainer.setVisibility(View.VISIBLE);
+        }
+        isLyricsVisisble = show;
+    }
+
+    private void resetLyricsSearch() {
+        currentLyrics = null;
+        if (downloadThread != null) {
+            downloadThread.interrupt();
+        }
+        if (isLyricsVisisble) {
+            isLyricsVisisble = false;
+            lyricsContent.setText("");
+            lyricsContainer.setVisibility(View.GONE);
+            lyricsIcon.setAlpha(0.5f);
+            coverContainer.setVisibility(View.VISIBLE);
+        }
+    }
+
+
     private void updateTypeShuffle(){
         if(mCbShuffe!=null){
             int color =getResources().getColor(YPYSettingManager.getShuffle(mContext) ? R.color.colorAccent : R.color.icon_color);
@@ -209,6 +362,9 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
 
 
     public void updateInformation() {
+
+        resetLyricsSearch();
+
         final TrackModel mCurrentTrackObject = MusicDataMng.getInstance().getCurrentTrackObject();
         if (mCurrentTrackObject != null) {
             this.mTvSong.setText(String.format(getString(R.string.format_current_song), mCurrentTrackObject.getTitle()));
@@ -250,7 +406,11 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
             mListSongs.clear();
             mListSongs=null;
         }
+    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
     }
 
     @Override
@@ -258,9 +418,13 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
         switch (v.getId()) {
             case R.id.btn_next:
                 mContext.startMusicService(ACTION_NEXT);
+
+                AdsManager.Companion.getInstance().showInterstitial(getActivity());
                 break;
             case R.id.btn_prev:
                 mContext.startMusicService(ACTION_PREVIOUS);
+
+                AdsManager.Companion.getInstance().showInterstitial(getActivity());
                 break;
             case R.id.fb_play:
                 onActionPlay();
@@ -408,7 +572,5 @@ public class FragmentYPYPlayerListenMusic extends DBFragment implements IXMusicC
             e.printStackTrace();
         }
     }
-
-
 
 }

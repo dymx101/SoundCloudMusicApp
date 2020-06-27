@@ -628,6 +628,7 @@ public class YPYMusicService extends Service implements IYPYMusicConstant,IXMusi
     private void configAndStartMediaPlayer() {
         try {
             if (mMediaPlayer != null && (mCurrentState == STATE_PLAYING || mCurrentState == STATE_PAUSE)) {
+                tryToGetAudioFocus();
                 if (mAudioFocus == AudioFocus.NO_FOCUS_NO_DUCK) {
                     if (mMediaPlayer.isPlaying()) {
                         mMediaPlayer.pause();

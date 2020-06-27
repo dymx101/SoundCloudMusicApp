@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TTPod</string>
+    <string name="info_copyright">フォトマジック</string>
+
+    <string name="action_settings">設定</string>
+    <string name="info_loading">お待ちください...</string>
+    <string name="title_yes">はい</string>
+    <string name="title_no">いいえ</string>
+    <string name="title_ok">了解</string>
+    <string name="title_cancel">キャンセル</string>
+    <string name="title_info">情報</string>
+    <string name="title_options">オプション</string>
+    <string name="title_confirm">確認</string>
+
+    <string name="title_unknown">不明</string>
+    <string name="title_timer">タイマー</string>
+    <string name="title_done">完了</string>
+
+    <string name="info_press_again_to_exit">アプリケーションを終了するには、もう一度戻るボタンを押してください</string>
+
+    <string name="info_playlist_name_existed">同じ名前のプレイリストは既に存在します。新しい名前を選択してください。</string>
+
+    <string name="title_no_songs">曲は見つかりませんでした</string>
+    <string name="info_delete_song">本当に消しますか?</string>
+    <string name="info_delete_song_done">曲が削除されました</string>
+
+    <string name="title_add_playlist">プレイリストに追加する</string>
+    <string name="title_select_playlist">プレイリストを選択</string>
+    <string name="info_playlist_error">プレイリスト名を空にすることはできません</string>
+
+    <string name="info_delete_playlist">このプレイリストを削除してもよろしいですか?</string>
+
+    <string name="info_song_already_playlist">この曲は既にプレイリストに存在します</string>
+
+    <string name="format_number_musics">%1$s 曲</string>
+    <string name="format_number_music">%1$s 曲</string>
+
+    <string name="title_playlist">プレイリスト</string>
+    <string name="title_playlist_name">プレイリスト名</string>
+
+    <string name="title_settings">設定</string>
+
+    <string name="title_save">保存</string>
+    <string name="title_equalizer">イコライザ</string>
+    <string name="title_custom">カスタム</string>
+    <string name="info_rate_me">アプリを評価</string>
+
+    <string name="info_lose_internet">インターネット接続を確認してください。</string>
+    <string name="info_empty">キーワードを記入して下さい</string>
+    <string name="info_close_app">アプリから出ますか?</string>
+    <string name="info_server_error">サーバーから切断されました。後で再試行してください。</string>
+
+    <string name="menu_remove_to_playlist">プレイリストから削除</string>
+
+    <string name="menu_add_to_playlist">プレイリストに追加</string>
+    <string name="menu_delete_song">曲を消す</string>
+    <string name="menu_share">共有</string>
+    <string name="info_play_song_error">この曲には問題があります、後で試してください。</string>
+
+    <string name="format_current_song">曲 : %1$s</string>
+    <string name="format_current_singer">作家 : %1$s</string>
+
+    <string-array name="list_create_playlist">
+        <item>プレイリストを作成</item>
+    </string-array>
+
+    <string name="info_error_sdcard">アプリを起動できません。ストレージが不足している可能性があります。先にクリーンアップしてください。</string>
+
+    <string name="info_visit_website">プライバシーポリシー</string>
+    <string name="info_send_email">フィードバック</string>
+    <string name="info_share">共有</string>
+    <string name="info_share_app">%1$sから始めよう%2$s</string>
+
+    <string name="title_search_music">曲を探す</string>
+    <string name="title_create">作成</string>
+    <string name="info_add_playlist">%1$sを%2$sに追加</string>
+    <string name="info_nosong_playlist">プレイリストは空です</string>
+
+    <string name="title_play_all">全てを再生</string>
+    <string name="title_rename_playlist">プレイリストを変名する</string>
+    <string name="title_delete_playlist">プレイリストを削除する</string>
+
+    <string name="info_permission_denied">許可がありません。デバイスでこのアプリケーションを開くことができません。後でもう一度試してください。</string>
+
+    <string name="title_bass">バス</string>
+    <string name="title_virtualizer">バーチャライザー</string>
+    <string name="title_sleep_mode">スリープモード</string>
+    <string name="title_off">オフ</string>
+
+    <string name="format_minutes">%1$s 分</string>
+    <string name="format_minute">%1$s 分</string>
+    <string name="title_now_playing">再生中</string>
+
+    <string name="title_tab_top_charts">トレンド中</string>
+    <string name="title_tab_discover">ジャンル</string>
+    <string name="title_tab_my_music">マイソング</string>
+    <string name="title_tab_my_playlist">プレイリスト</string>
+
+    <string name="info_write_setting_permission">着信音や通知を設定するには、write_settingパーミッションが必要です。今すぐ提供しますか?</string>
+    <string name="info_set_ringtone_successfully">リングトーンセット完了.</string>
+    <string name="info_set_notification_successfully">着信音セット完了</string>
+    <string name="title_set_as_ringtone">リングトーンに使う</string>
+    <string name="title_set_as_noti">着信音に使う</string>
+    <string name="title_artist">アーティスト</string>
+    <string name="title_song">曲</string>
+    <string name="title_edit_song">曲をエディット</string>
+    <string name="lbl_welcome">ようこそ!</string>
+    <string name="lbl_welcome_message">TTPod Musicは無料のオンライン音楽プレイヤーで、500万曲以上の楽曲が登録されています。
+
+\n\nTTPod Musicで何が出来るのでしょうか?
+\n- 5,000,000以上の音楽を探してプレイ
+\n- ローカルまたはオンラインの曲を含むプレイリストを作成する
+\n- スリープモードのセットアップタイマ
+\n- イコライザを使用してサウンド効果を調整
+\n- 異なるジャンル
+    </string>
+
+    <string name="lbl_disclaimer">免責事項</string>
+    <string name="lbl_disclaimer_message">私たちは、いかなる曲もの著作権所有者ではありません。このアプリは 「SoundCloud」 のパブリックAPIを使って音楽をストリーミングしています。</string>
+
+    <string name = "having_fun">あなたは好きな曲を探していますか？</string>
+    <string name = "ask_rating">これまでのところTTPod Music Playerがお気に入りですか, Playストアで評価をください? </string>
+    <string name = "not_now">今はしていません</string>
+
+    <string name = "lbl_lyrics_not_found">歌詞が見つかりません！</string>
+    <string name = "lbl_lyrics_search_manually">歌詞の検索</string>
+</resources>

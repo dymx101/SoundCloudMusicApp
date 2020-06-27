@@ -32,6 +32,7 @@
     <color name="colorBackgroundSuggestion">#000000</color>
 
     <color name="white">#ffffff</color>
+    <color name="almost_white">#efefef</color>
 
 
 </resources>

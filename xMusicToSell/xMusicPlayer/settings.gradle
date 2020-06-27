@@ -1,1 +1,1 @@
-include ':app', ':SeekArc_library', ':equalizerview'
+include ':app', ':SeekArc_library', ':equalizerview', ':unity-ads'
